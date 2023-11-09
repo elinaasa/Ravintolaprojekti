@@ -15,7 +15,8 @@
   'FILL' 0,
   'wght' 400,
   'GRAD' 0,
-  'opsz' 24
+  'opsz' 24;
+  cursor: pointer;
 }
 
 * {
@@ -43,6 +44,8 @@ nav {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  width: 100%;
   padding: 0 2rem;
   background-color: var(--platinum-2);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -114,12 +117,16 @@ nav a:active {
   background-color: yellow;
 }
 
-.lounas-container {
+.hero-container-content {
+  text-align: left;
+}
+
+.lunch-container {
   display: flex;
   height: 80vh;
 }
 
-.lounas-container-left {
+.lunch-container-left {
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -128,7 +135,7 @@ nav a:active {
   background-color: blue;
 }
 
-.lounas-container-right {
+.lunch-container-right {
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -137,11 +144,15 @@ nav a:active {
   background-color: purple;
 }
 
+.lunch-container-content {
+  text-align: left;
+}
+
 ul {
   list-style: none;
 }
 
-#lounas-header {
+#lunch-header {
   margin: 0;
 }
 
@@ -179,4 +190,81 @@ ul {
   background-color: orange;
 }
 
-/* MEDIA */
+.footer-container-content {
+  text-align: left;
+}
+
+.contact-info {
+  margin: 2px;
+}
+
+/* BUTTONS */
+
+.arrow-button {
+  display: flex;
+  color: #19415aff;
+  background-color: #e2e2e4ff;
+  padding: 10px 16px;
+  transition: all .3s ease;
+  align-items: center;
+  font-size: 14px;
+}
+
+.arrow-button > .arrow {
+  width: 6px;
+  height: 6px;
+  border-right: 2px solid #19415aff;
+  border-bottom: 2px solid #19415aff;
+  position: relative;
+  transform: rotate(-45deg);
+  margin: 0 6px;
+  transition: all .3s ease;
+}
+
+.arrow-button > .arrow::before {
+  display: block;
+  background-color: currentColor;
+  width: 3px;
+  transform-origin: bottom right;
+  height: 2px;
+  position: absolute;
+  opacity: 0;
+  bottom: calc(-2px / 2);
+  transform: rotate(45deg);
+  transition: all .3s ease;
+  right: 0;
+}
+
+.arrow-button:hover > .arrow {
+  transform: rotate(-45deg) translate(4px, 4px);
+  border-color: text-hover-color;
+}
+
+.arrow-button:hover > .arrow::before {
+  opacity: 1;
+  width: 8px;
+}
+
+.arrow-button:hover {
+  background-color: var(--platinum);
+  color: var(--indigo-dye);
+}
+
+.basic-button {
+  display: flex;
+  color: var(--platinum-2);
+  background-color: var(--indigo-dye);
+  padding: 10px 16px;
+  transition: all .3s ease;
+  align-items: center;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.basic-button:hover {
+  background-color: var(--platinum);
+  color: var(--indigo-dye);
+}
+
+/* MEDIA QUERIES */
