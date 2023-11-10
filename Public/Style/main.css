@@ -183,7 +183,9 @@ nav a:active {
   height: 50vh;
 }
 
-.take-awa
+.take-away h1 {
+  font-size: 3rem;
+}
 
 .take-away p {
   margin: 0.3rem;
