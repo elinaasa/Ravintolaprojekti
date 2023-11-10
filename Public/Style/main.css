@@ -10,6 +10,12 @@
   --white: #fefefeff;
 }
 
+:root {
+  --mainFont: 'Roboto', sans-serif;
+  --headerFont: 'League Spartan', sans-serif;
+  --contentFont: 'Open Sans', sans-serif;
+}
+
 .material-symbols-outlined {
   font-variation-settings:
   'FILL' 0,
@@ -23,10 +29,14 @@
   box-sizing: border-box;
 }
 
+#makkara {
+  width: 80%;
+  height: auto;
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', sans-serif;
   background-color: var(--platinum-2);
   color: var(--gunmetal);
 }
@@ -34,7 +44,14 @@ body {
 section {
 width: 90%;
 margin: 0 auto;
+}
 
+p {
+  font-family: var(--contentFont);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--headerFont);
 }
 
 /* NAVIGATION */
@@ -49,6 +66,7 @@ nav {
   padding: 0 2rem;
   background-color: var(--platinum-2);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: var(--headerFont);
 }
 
 .navbar-brand {
@@ -61,7 +79,7 @@ nav {
 nav a {
   text-decoration: none;
   color: var(--indigo-dye);
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 600;
   padding: 10px;
 }
@@ -105,7 +123,6 @@ nav a:active {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: green;
 }
 
 .hero-container-right {
@@ -119,6 +136,11 @@ nav a:active {
 
 .hero-container-content {
   text-align: left;
+}
+
+#lunchPlace {
+  margin: 0;
+  font-size: 4rem;
 }
 
 .lunch-container {
@@ -141,19 +163,15 @@ nav a:active {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: purple;
 }
 
 .lunch-container-content {
   text-align: left;
 }
 
-ul {
-  list-style: none;
-}
-
-#lunch-header {
+.lunch-container-content h1 {
   margin: 0;
+  font-size: 3rem;
 }
 
 .take-away {
@@ -163,6 +181,17 @@ ul {
   align-items: center;
   background-color: yellowgreen;
   height: 50vh;
+}
+
+.take-awa
+
+.take-away p {
+  margin: 0.3rem;
+  width: 80%;
+}
+
+.take-away button {
+  margin: 1rem;
 }
 
 /* FOOTER */
@@ -178,7 +207,6 @@ ul {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: red;
 }
 
 .footer-container-right {
@@ -208,6 +236,7 @@ ul {
   transition: all .3s ease;
   align-items: center;
   font-size: 14px;
+  font-family: var(--contentFont);
 }
 
 .arrow-button > .arrow {
