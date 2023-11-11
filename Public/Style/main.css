@@ -30,8 +30,8 @@
 }
 
 #makkara {
-  width: 80%;
-  height: auto;
+  width: auto;
+  height: 1000px;
 }
 
 body {
@@ -123,6 +123,7 @@ nav a:active {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 100px; /* adding margin */
 }
 
 .hero-container-right {
@@ -131,7 +132,7 @@ nav a:active {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: yellow;
+  margin-top: 100px; /* adding margin */
 }
 
 .hero-container-content {
