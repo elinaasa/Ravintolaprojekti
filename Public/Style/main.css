@@ -155,7 +155,6 @@ nav a:active {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: blue;
 }
 
 .lunch-container-right {
@@ -164,6 +163,11 @@ nav a:active {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+#food {
+  width: auto;
+  height: 1000px;
 }
 
 .lunch-container-content {
@@ -218,7 +222,6 @@ nav a:active {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: orange;
 }
 
 .footer-container-content {
