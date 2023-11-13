@@ -17,11 +17,7 @@
 }
 
 .material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24;
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
   cursor: pointer;
 }
 
@@ -37,73 +33,24 @@ body {
 }
 
 section {
-width: 90%;
-margin: 0 auto;
+  width: 90%;
+  margin: 0 auto;
 }
 
 p {
   font-family: var(--contentFont);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--headerFont);
 }
 
 /* NAVIGATION */
-
-nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  width: 100%;
-  padding: 0 2rem;
-  background-color: var(--platinum-2);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  font-family: var(--headerFont);
-}
-
-.navbar-brand {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--indigo-dye);
-}
-
-
-nav a {
-  text-decoration: none;
-  color: var(--indigo-dye);
-  font-size: 1.5rem;
-  font-weight: 600;
-  padding: 10px;
-}
-
-nav a:hover {
-  color: var(--caribbean-current);
-}
-
-nav a.active {
-  color: var(--cadet-gray);
-}
-
-.material-symbols-outlined {
-  font-size: 1.5rem;
-  color: var(--indigo-dye);
-  margin: 7px;
-}
-
-.material-symbols-outlined:hover {
-  color: var(--caribbean-current);
-}
-
-.material-symbols-outlined:active {
-  color: var(--cadet-gray);
-}
-
-.navbar-toggler {
-  display: none;
-}
 
 /* BODY */
 
@@ -182,7 +129,6 @@ nav a.active {
 
 .lunch-list-days {
   margin: auto;
-
 }
 
 .special-diet-container {
@@ -215,7 +161,7 @@ div.special-diet-labels a {
   color: #19415aff;
   background-color: #e2e2e4ff;
   padding: 10px 16px;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   align-items: center;
   font-size: 14px;
   font-family: var(--contentFont);
@@ -229,7 +175,7 @@ div.special-diet-labels a {
   position: relative;
   transform: rotate(-45deg);
   margin: 0 6px;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 
 .arrow-button > .arrow::before {
@@ -242,7 +188,7 @@ div.special-diet-labels a {
   opacity: 0;
   bottom: calc(-2px / 2);
   transform: rotate(45deg);
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   right: 0;
 }
 

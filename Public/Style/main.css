@@ -17,16 +17,14 @@
 }
 
 .material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24;
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
   cursor: pointer;
 }
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 #hero {
@@ -35,22 +33,25 @@
 }
 
 body {
-  margin: 0;
-  padding: 0;
   background-color: var(--platinum-2);
   color: var(--gunmetal);
 }
 
 section {
-width: 90%;
-margin: 0 auto;
+  width: 90%;
+  margin: 0 auto;
 }
 
 p {
   font-family: var(--contentFont);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--headerFont);
 }
 
@@ -58,23 +59,21 @@ h1, h2, h3, h4, h5, h6 {
 
 nav {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   position: fixed;
   width: 100%;
-  padding: 0 2rem;
+  padding: 1.5rem;
   background-color: var(--platinum-2);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
   font-family: var(--headerFont);
 }
 
 .navbar-brand {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 600;
   color: var(--indigo-dye);
 }
-
 
 nav a {
   text-decoration: none;
@@ -92,10 +91,15 @@ nav a:active {
   color: var(--cadet-gray);
 }
 
+.nav-items-right {
+  display: flex;
+  align-items: center;
+}
+
 .material-symbols-outlined {
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: var(--indigo-dye);
-  margin: 7px;
+  margin-top: 5px;
 }
 
 .material-symbols-outlined:hover {
@@ -142,6 +146,7 @@ nav a:active {
 #lunchPlace {
   margin: 0;
   font-size: 4rem;
+  color: var(--indigo-dye);
 }
 
 .lunch-container {
@@ -239,7 +244,7 @@ nav a:active {
   color: #19415aff;
   background-color: #e2e2e4ff;
   padding: 10px 16px;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   align-items: center;
   font-size: 14px;
   font-family: var(--contentFont);
@@ -253,7 +258,7 @@ nav a:active {
   position: relative;
   transform: rotate(-45deg);
   margin: 0 6px;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 
 .arrow-button > .arrow::before {
@@ -266,7 +271,7 @@ nav a:active {
   opacity: 0;
   bottom: calc(-2px / 2);
   transform: rotate(45deg);
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   right: 0;
 }
 
@@ -290,7 +295,7 @@ nav a:active {
   color: var(--platinum-2);
   background-color: var(--indigo-dye);
   padding: 10px 16px;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   align-items: center;
   border-radius: 8px;
   font-weight: bold;
