@@ -139,7 +139,7 @@ SELECT * FROM Orders;
 
 -- Deletion
 DELETE FROM Menus WHERE menu_name = 'Breakfast';
-
+DELETE FROM OrderItems WHERE order_item_id = 1;
 
 
 -- Updates
@@ -148,4 +148,6 @@ UPDATE FoodItems SET quantity = 20, unit_price = 9.99 WHERE food_id = 1;
 UPDATE Orders SET order_status_id = 2 WHERE order_id = 2;
 UPDATE Users SET username = "UusiPekka" WHERE user_id = 1;
 
---
+--Queries
+SELECT * FROM OrderItems WHERE quantity > 1;
+SELECT order_date FROM Orders WHERE order_id = 1;
