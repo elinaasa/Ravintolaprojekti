@@ -147,10 +147,16 @@ nav a:active {
   text-align: left;
 }
 
+
 #lunchPlace {
   margin: 0;
   font-size: 4rem;
   color: var(--indigo-dye);
+  padding-bottom: 10px;
+}
+
+#slogan {
+  padding-bottom: 5px;
 }
 
 .lunch-container {
@@ -193,7 +199,6 @@ nav a:active {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: yellowgreen;
   height: 50vh;
 }
 
