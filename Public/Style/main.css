@@ -32,7 +32,8 @@
 }
 
 #hero {
-  height: 90%;
+   height: 70%;
+   width: auto;
 }
 
 body {
@@ -130,7 +131,7 @@ nav a:active {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 100px; /* adding margin */
+  margin-top: 10px; /* adding margin */
 }
 
 .hero-container-right {
@@ -139,7 +140,7 @@ nav a:active {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 100px; /* adding margin */
+  margin-top: 10px; /* adding margin */
 }
 
 .hero-container-content {
@@ -174,8 +175,8 @@ nav a:active {
 }
 
 #food {
+  height: 90%;
   width: auto;
-  height: 1000px;
 }
 
 .lunch-container-content {
