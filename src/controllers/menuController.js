@@ -1,22 +1,3 @@
-// menuController.js
-
-// Sample in-memory data as a placeholder for database interaction
-let menuItems = [
-  {
-    id: 1,
-    name: 'Burger',
-    price: 10.99,
-    description: 'Juicy beef burger with lettuce and cheese',
-  },
-  {
-    id: 2,
-    name: 'Pizza',
-    price: 12.99,
-    description: 'Classic Margherita pizza with tomato and mozzarella',
-  },
-  // Add more items as needed
-];
-
 // Controller for handling menu-related operations
 const menuController = {
   // Get all menu items
@@ -63,5 +44,23 @@ const menuController = {
     res.json({message: 'Menu item deleted successfully'});
   },
 };
+
+function displayMenu(menuItems) {
+  const menuContainer = document.getElementById('menu-container');
+
+  // Loop through menu items and generate HTML
+  menuItems.forEach(item => {
+    const menuItemHTML = `
+      <div class="menu-item">
+        <h3>${item.name}</h3>
+        <p>${item.description}</p>
+        <p>Diet Restriction: ${item.diet_restriction}</p>
+      </div>
+    `;
+
+    // Append HTML to menu container
+    menuContainer.innerHTML += menuItemHTML;
+  });
+}
 
 module.exports = menuController;

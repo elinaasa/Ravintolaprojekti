@@ -1,15 +1,19 @@
+// menuRouter.js
 import express from 'express';
-
 const router = express.Router();
-const menuController = require('./controllers/menuController');
 
-// Get the entire weekly menu
-router.get('/menu', menuController.getWeeklyMenu);
+// Import the function to get menu data from the database
+const {getMenuFromDatabase} = require('../controllers/menuController');
 
-// Get the menu for a specific day
-router.get('/menu/:day', menuController.getDailyMenu);
-
-// Update the menu for a specific day
-router.put('/menu/:day', menuController.updateDailyMenu);
+// Define the /menu endpoint
+router.get('/', async (req, res) => {
+  try {
+    const menuItems = await getMenuFromDatabase();
+    res.json(menuItems);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({error: 'Internal Server Error'});
+  }
+});
 
 module.exports = router;
