@@ -57,6 +57,7 @@ h4,
 h5,
 h6 {
   font-family: var(--headerFont);
+  color: var(--indigo-dye);
 }
 
 
@@ -199,6 +200,7 @@ nav a:active {
 
 #slogan {
   padding-bottom: 5px;
+  color: var(--gunmetal);
 }
 
 .lunch-container {
