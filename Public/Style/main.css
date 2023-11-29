@@ -57,6 +57,7 @@ h4,
 h5,
 h6 {
   font-family: var(--headerFont);
+  color: var(--indigo-dye);
 }
 
 
@@ -198,7 +199,8 @@ nav a:active {
 }
 
 #slogan {
-  padding-bottom: 5px;
+  color: var(--gunmetal);
+  margin: 2rem 0 2rem 0;
 }
 
 .lunch-container {
@@ -222,6 +224,21 @@ nav a:active {
   align-items: center;
 }
 
+#divider {
+  height: 2px;
+  width: 50%;
+  background: linear-gradient(90deg, var(--platinum-2), var(--indigo-dye), var(--platinum-2));
+}
+
+.lunch-list-days {
+  font-size: 2rem;
+  margin: 3rem 0 1rem 0;
+}
+
+.lunch-items p {
+  margin: 1rem 0 1rem 0;
+}
+
 #food {
   height: 90%;
   width: auto;
@@ -242,6 +259,10 @@ nav a:active {
   justify-content: center;
   align-items: center;
   height: 50vh;
+}
+
+.take-away-content {
+  text-align: center;
 }
 
 .take-away h1 {
@@ -285,7 +306,12 @@ nav a:active {
 }
 
 .contact-info {
-  margin: 2px;
+  margin: 0.4rem;
+}
+
+.contact-head {
+  font-size: 3rem;
+  margin: 0;
 }
 
 /* BUTTONS */

@@ -10,9 +10,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ravintolaprojekti</title>
-    <link rel="stylesheet" href="./Public/Style/main.css" />
-    <link rel="stylesheet" href="./Public/Style/login.css">
-    <script src="src/login.js" defer></script>
+    <link rel="stylesheet" href="../Public/Style/main.css" />
+    <link rel="stylesheet" href="../Public/Style/login.css">
+    <script src="./src/login.js" defer></script>
   </head>
   <body>
     <header>
@@ -20,13 +20,12 @@
       <!-- NEW NAV BAR STARTS -->
       <!-- NEW NAV BAR STARTS -->
       <div class="topnav">
-        <a class="logo" href="index.html">Ravintola</a>
-        <a class="nav-item" href="#">Ruokalista</a>
-        <a class="nav-item" href="#">Tilaus</a>
-        <a class="nav-item" href="#">Meistä</a>
-        <a class="nav-item" href="#">Yhteystiedot</a>
+        <a class="logo" href="./index.html">GreenFusion Bistro</a>
+        <a class="nav-item" href="./docs/lunch.html">Ruokalista</a>
+        <a class="nav-item" href="./docs/order.html">Tilaus</a>
+        <a class="nav-item" href="#footer">Yhteystiedot</a>
         <!-- Placeholder for icon -->
-        <a class="nav-item" href="#"> <img src="Public/Image/shopping-cart.png" alt="shopping cart" width="20" height="20"></a>
+        <a class="nav-item" href="./docs/shoppingcart.html"> <img src="Public/Image/shopping-cart.png" alt="shopping cart" width="20" height="20"></a>
         <!-- Placeholder for icon -->
         <a id="login-icon" class="nav-item" href="#"> <img src="Public/Image/login.png" alt="login" width="25" height="20"></a>
       </div>
@@ -126,9 +125,9 @@
     <div class="hero-container">
       <div class="hero-container-left">
         <div class="hero-container-content">
-          <h1 id="lunchPlace">Lounaspaikka</h1>
-          <h3 id="slogan">Joku hyvä slogan</h3>
-          <button class="basic-button">Katso menu</button>
+          <h1 id="lunchPlace">GreenFusion Bistro</h1>
+          <h3 id="slogan">Kasvisten ja muiden herkkujen tanssi – trendikästä makumatkaa lautasellasi</h3>
+          <button class="basic-button" onclick="location.href='./docs/lunch.html'">Katso menu</button>
         </div>
       </div>
       <div class="hero-container-right">
@@ -142,14 +141,17 @@
       <div class="lunch-container-right">
         <div class="lunch-container-content">
         <h1 id="lunch-header">Lounas / 12€</h1>
-        <h3>Maanantai</h3>
+        <h3 class="lunch-list-days">Maanantai</h3>
         <div class="lunch-items">
-          <p>Tonnikala-pinaattilasagnettea <br />A, L</p>
-          <p>Porsas-paprikakastiketta <br />A, G, L</p>
-          <p>Nakkistroganoffia <br />A, L</p>
-          <p>Kebab-pastavuoka <br />A, L, VS</p>
+          <p>Grillattu Kana Salaatti</p>
+          <p>Tuoreita vihreitä grillatun kanan rinnan kera</p>
+          <p>Laktoositon, Gluteeniton</p>
+          <div id="divider"></div>
+          <p>Vegetaarinen Pasta</p>
+          <p>Pasta sesonkivihanneksilla ja tomaattikastikkeella (sisältää gluteenia)</p>
+          <p>Laktoositon</p>
         </div>
-        <button class="arrow-button">KATSO KOKO VIIKON MENU<span class="arrow"></span></button>
+        <button class="arrow-button" onclick="location.href='./docs/lunch.html#weeklyLunch'">KATSO KOKO VIIKON MENU<span class="arrow"></span></button>
       </div>
       </div>
     </div>
@@ -164,10 +166,10 @@
       valmiiksi.
       </p>
       </div>
-      <button class="arrow-button">MAKSA LOUNAS ETUKÄTEEN<span class="arrow"></span></button></div></div>
+      <button class="arrow-button" onclick="location.href='./docs/order.html'">MAKSA LOUNAS ETUKÄTEEN<span class="arrow"></span></button></div></div>
   </body>
 </main>
-  <footer>
+  <footer id="footer">
     <div class="footer-container">
       <div class="footer-container-left">
           <div class="footer-container-content">
