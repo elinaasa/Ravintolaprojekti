@@ -93,7 +93,7 @@ INSERT INTO menu_items (name, description, diet, week_number, day_of_week) VALUE
 -- Viikko 1
 INSERT INTO menu_items (name, description, diet, week_number, day_of_week) VALUES
   -- Maanantai
-  ('Grillattu Kana Salaatti', 'Tuoreita vihreitä grillatun kanan rinnan kera', 'Laktoositon, Gluteeniton', 1, 1),
+  ('Grillattu Kana Salaatti', 'Tuoreita vihanneksia grillatun kanan rinnan kera', 'Laktoositon, Gluteeniton', 1, 1),
   ('Vegetaarinen Pasta', 'Pasta sesonkivihanneksilla ja tomaattikastikkeella (sisältää gluteenia)', 'Laktoositon', 1, 1),
   -- Tiistai
   ('Lohta ja Kvinoakulhoa', 'Kvinoakulho grillatulla lohella ja vihanneksilla', 'Laktoositon, Gluteeniton', 1, 2),
