@@ -24,4 +24,4 @@ dist-ssr
 *.sln
 *.sw?
 .env
-utils/create-user.sql
+src/utils/create-user.sql
