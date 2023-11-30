@@ -1,19 +1,38 @@
 // menuRouter.js
 import express from 'express';
-const router = express.Router();
+import {
+  deleteMenu,
+  getMenus,
+  getMenusById,
+  postMenu,
+  putMenu,
+} from '../controllers/menu-controller.mjs';
+import {authenticateToken} from '../middlewares/authentication.mjs';
+import {body} from 'express-validator';
 
-// Import the function to get menu data from the database
-const {getMenuFromDatabase} = require('../controllers/menuController');
+const menuRouter = express.Router();
 
-// Define the /menu endpoint
-router.get('/', async (req, res) => {
-  try {
-    const menuItems = await getMenuFromDatabase();
-    res.json(menuItems);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({error: 'Internal Server Error'});
-  }
-});
+menuRouter
+  .route('/')
+  .get(getMenus)
+  .post(
+    authenticateToken,
+    body('name').isLength({min: 3}),
+    body('description').isLength({max: 255}),
+    body('diet').isLength({min: 3}),
+    postMenu
+  );
 
-module.exports = router;
+menuRouter
+  .route('/:menu_id')
+  .get(getMenusById)
+  .put(
+    authenticateToken,
+    body('name').isLength({min: 3}),
+    body('description').isLength({max: 255}),
+    body('diet').isLength({min: 3}),
+    putMenu
+  )
+  .delete(authenticateToken, deleteMenu);
+
+export default menuRouter;

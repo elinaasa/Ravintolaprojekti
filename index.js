@@ -1,13 +1,14 @@
 import express from 'express';
 import path from 'path';
 import {fileURLToPath} from 'url';
-import userRouter from './src/routes/user-routers.mjs';
 import {
   logger,
   notFoundHandler,
   errorHandler,
 } from './src/middlewares/middlewares.mjs';
 import authRouter from './src/routes/auth-router.mjs';
+import menuRouter from './src/routes/menu-router.mjs';
+import userRouter from './src/routes/user-routers.mjs';
 
 const hostname = '127.0.0.1';
 const app = express();
@@ -35,6 +36,9 @@ app.use('/api/auth', authRouter);
 
 // user endpoints
 app.use('/api/user', userRouter);
+
+// menu endpoints
+app.use('/api/menu', menuRouter);
 
 // 404 & error handler
 app.use(notFoundHandler);

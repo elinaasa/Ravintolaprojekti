@@ -22,8 +22,8 @@ CREATE TABLE Users (
   FOREIGN KEY (user_level_id) REFERENCES UserLevels(user_level_id)
 );
 
-CREATE TABLE IF NOT EXISTS menu_items (
-  id INT AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE Menus (
+  menu_id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
   description TEXT,
   diet VARCHAR(50),
@@ -46,7 +46,7 @@ INSERT INTO Users (username, fname, lname, password, email, user_level_id, creat
 
 -- Insert menu items for 4 weeks
 
-INSERT INTO menu_items (name, description, diet, week_number, day_of_week) VALUES
+INSERT INTO Menus (name, description, diet, week_number, day_of_week) VALUES
   -- Monday
   ('Grilled Chicken Salad', 'Fresh greens with grilled chicken breast', 'Lactose-Free, Gluten-Free', 1, 1),
   ('Vegetarian Pasta', 'Pasta with seasonal vegetables and tomato sauce (contains gluten)', 'Lactose-Free', 1, 1),
@@ -64,7 +64,7 @@ INSERT INTO menu_items (name, description, diet, week_number, day_of_week) VALUE
   ('Mushroom Risotto', 'Creamy risotto with mushrooms and Parmesan cheese (contains gluten)', 'Lactose-Free', 1, 5);
 
 -- Week 2
-INSERT INTO menu_items (name, description, diet, week_number, day_of_week) VALUES
+INSERT INTO Menus (name, description, diet, week_number, day_of_week) VALUES
   -- Monday
   ('Teriyaki Chicken Bowl', 'Bowl with teriyaki chicken, rice, and steamed broccoli', 'Lactose-Free', 2, 1),
   ('Mushroom Risotto', 'Creamy risotto with assorted mushrooms and Parmesan cheese (contains lactose)', 'None', 2, 1),
@@ -83,7 +83,7 @@ INSERT INTO menu_items (name, description, diet, week_number, day_of_week) VALUE
 
 
 -- Week 3
-INSERT INTO menu_items (name, description, diet, week_number, day_of_week) VALUES
+INSERT INTO Menus (name, description, diet, week_number, day_of_week) VALUES
   -- Monday
   ('Grilled Salmon Salad', 'Fresh salad with grilled salmon and citrus dressing', 'Lactose-Free, Gluten-Free', 3, 1),
   ('Quinoa and Black Bean Bowl', 'Bowl with quinoa, black beans, and assorted veggies', 'Lactose-Free, Gluten-Free, Vegan', 3, 1),
@@ -101,7 +101,7 @@ INSERT INTO menu_items (name, description, diet, week_number, day_of_week) VALUE
   ('Eggplant Parmesan', 'Baked eggplant with marinara sauce and melted mozzarella (contains gluten)', 'Lactose-Free', 3, 5);
 
 -- Week 4
-INSERT INTO menu_items (name, description, diet, week_number, day_of_week) VALUES
+INSERT INTO Menus (name, description, diet, week_number, day_of_week) VALUES
   -- Monday
   ('Mediterranean Chickpea Salad', 'Chickpea salad with tomatoes, cucumber, and feta cheese (contains lactose)', 'Lactose-Free', 4, 1),
   ('Vegetable Stir-Fry with Tofu', 'Stir-fried vegetables with tofu in teriyaki sauce', 'Lactose-Free, Gluten-Free, Vegan', 4, 1),
@@ -122,7 +122,7 @@ INSERT INTO menu_items (name, description, diet, week_number, day_of_week) VALUE
 -- Menu Suomeksi
 
 -- Viikko 1
-INSERT INTO menu_items (name, description, diet, week_number, day_of_week) VALUES
+INSERT INTO Menus (name, description, diet, week_number, day_of_week) VALUES
   -- Maanantai
   ('Grillattu Kana Salaatti', 'Tuoreita vihanneksia grillatun kanan rinnan kera', 'Laktoositon, Gluteeniton', 1, 1),
   ('Vegetaarinen Pasta', 'Pasta sesonkivihanneksilla ja tomaattikastikkeella (sisältää gluteenia)', 'Laktoositon', 1, 1),
@@ -141,7 +141,7 @@ INSERT INTO menu_items (name, description, diet, week_number, day_of_week) VALUE
 
 
 -- Viikko 2
-INSERT INTO menu_items (name, description, diet, week_number, day_of_week) VALUES
+INSERT INTO Menus (name, description, diet, week_number, day_of_week) VALUES
   -- Maanantai
   ('Teriyaki Kana Kulho', 'Kulho teriyaki kanaa, riisiä ja höyrytettyä parsakaalia', 'Laktoositon', 2, 1),
   ('Sienirisotto', 'Kermainen risotto sienillä ja parmesaanijuustolla (sisältää laktoosia)', 'Ei rajoitteita', 2, 1),
@@ -160,7 +160,7 @@ INSERT INTO menu_items (name, description, diet, week_number, day_of_week) VALUE
 
 
 -- Viikko 3
-INSERT INTO menu_items (name, description, diet, week_number, day_of_week) VALUES
+INSERT INTO Menus (name, description, diet, week_number, day_of_week) VALUES
   -- Maanantai
   ('Grillattu Lohisalaatti', 'Raikas salaatti grillatulla lohella ja sitruskastikkeella', 'Laktoositon, Gluteeniton', 3, 1),
   ('Quinoa ja Mustapapukulho', 'Kulho quinoaa, mustapapuja ja sekoitettuja vihanneksia', 'Laktoositon, Gluteeniton, Vegaaninen', 3, 1),
@@ -178,7 +178,7 @@ INSERT INTO menu_items (name, description, diet, week_number, day_of_week) VALUE
   ('Melanzane Parmigiana', 'Uunissa paistettu munakoiso tomaattikastikkeella ja sulaneella mozzarellalla (sisältää gluteenia)', 'Laktoositon', 3, 5);
 
 -- Viikko 4
-INSERT INTO menu_items (name, description, diet, week_number, day_of_week) VALUES
+INSERT INTO Menus (name, description, diet, week_number, day_of_week) VALUES
   -- Maanantai
   ('Välimerellinen Kikherne Salaatti', 'Kikherne salaatti tomaateilla, kurkulla ja fetajuustolla (sisältää laktoosia)', 'None', 4, 1),
   ('Vihanneswokki Tofulla', 'Wokatut vihannekset tofun ja teriyaki-kastikkeen kera', 'Laktoositon, Gluteeniton, Vegaaninen', 4, 1),
