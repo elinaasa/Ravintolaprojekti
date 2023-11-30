@@ -16,31 +16,6 @@
   --contentFont: 'Open Sans', sans-serif;
 }
 
-.material-icons {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 30px; /* Preferred icon size */
-  display: inline-block;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
-
-  /* Support for all WebKit browsers. */
-  -webkit-font-smoothing: antialiased;
-  /* Support for Safari and Chrome. */
-  text-rendering: optimizeLegibility;
-
-  /* Support for Firefox. */
-  -moz-osx-font-smoothing: grayscale;
-
-  /* Support for IE. */
-  font-feature-settings: 'liga';
-}
-
 .material-icons-outlined {
   font-family: 'Material Icons Outlined';
   font-weight: normal;
@@ -182,6 +157,7 @@ nav .nav-item {
 }
 
 .mobile-nav {
+  font: var(--headerFont);
   display: block;
   position: fixed;
   top: 0;
@@ -194,6 +170,7 @@ nav .nav-item {
 }
 
 .mobile-nav a {
+  font: var(--headerFont);
   margin: 0 auto 16px;
   width: 100%;
   max-width: 200px;
@@ -207,17 +184,6 @@ nav .nav-item {
 .mobile-nav.is-active {
   left: 0;
 }
-
-@media (min-width: 767px) {
-  .mobile-nav {
-    display: none;
-  }
-
-  .hamburger {
-    display: none;
-  }
-}
-
 /* BODY */
 
 .hero-container {
@@ -446,46 +412,13 @@ nav .nav-item {
 }
 
 /* MEDIA QUERIES */
-@media only screen and (max-width: 900px) {
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
 
-  .nav-items-right {
+@media (min-width: 767px) {
+  .mobile-nav {
     display: none;
   }
 
-  .hero-container {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .hero-container-left {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 100px; /* adding margin */
-  }
-
-  .hero-container-right {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 100px; /* adding margin */
-  }
-
-  #hero {
-    width: auto;
-    height: 600px;
-  }
-
-  #food {
-    width: auto;
-    height: 600px;
+  .hamburger {
+    display: none;
   }
 }
