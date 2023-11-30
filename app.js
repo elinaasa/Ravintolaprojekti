@@ -1,13 +1,13 @@
-// app.js
-const express = require('express');
-const menuRouter = require('./routes/menuRouter');
+// // app.js
+// const express = require('express');
+// const menuRouter = require('./routes/menuRouter');
 
-const app = express();
+// const app = express();
 
-app.use('/api/menu', menuRouter);
+// app.use('/api/menu', menuRouter);
 
-// Start the server
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+// // Start the server
+// const PORT = process.env.PORT || 3000;
+// app.listen(PORT, () => {
+//   console.log(`Server is running on port ${PORT}`);
+// });

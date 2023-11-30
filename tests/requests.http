@@ -1,0 +1,82 @@
+##auth/login
+
+### POST /api/auth/login
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{"username": "UusiPekka", "password": "password123"}
+
+### GET my user info
+GET http://127.0.0.1:3000/api/auth/me
+Authorization: Bearer <token>
+
+### GET /users
+GET http://127.0.0.1:3000/api/user
+
+### GET /users/:id
+GET http://127.0.0.1:3000/api/user/1
+
+### POST /user
+POST http://127.0.0.1:3000/api/user
+content-type: application/json
+
+  {
+    "user_id": "7",
+    "username": "hash",
+    "password": "salasana",
+    "fname": "Hash",
+    "lname": "Pliis",
+    "email": "hash@pliis.com",
+    "user_level_id": 1,
+    "created_at": "2023-04-02T05:56:41.000Z"
+  }
+
+### POST /user error
+POST http://127.0.0.1:3000/api/user
+
+{"höpö": "höpö"}
+
+### PUT /users/:id
+PUT http://127.0.0.1:3000/api/user/2
+Authorization: Bearer <token>
+content-type: application/json
+
+  {
+    "username": "",
+    "password": "",
+    "email": "",
+    "user_level_id": 3,
+    "created_at": ""
+  }
+
+### DELETE /users/:id
+DELETE http://127.0.0.1:3000/api/user/7
+
+#############################################
+
+### GET /menus
+GET http://127.0.0.1:3000/api/menu
+
+### GET /menus/:id
+GET http://127.0.0.1:3000/api/menu/1
+
+### POST /menus
+POST http://127.0.0.1:3000/api/menu
+
+{
+  "name": "Kesämenu",
+  "description": "Kesämenu 2021",
+  "created_at": "2021-04-02T05:56:41.000Z"
+}
+
+### PUT /menus/:id
+PUT http://127.0.0.1:3000/api/menu/1
+
+{
+  "name": "Kesämenuuuuuuuuuuuu",
+  "description": "Kesämenu 303030303",
+  "created_at": "2021-04-02T05:56:41.000Z"
+}
+
+### DELETE /menus/:id
+DELETE http://127.0.0.1:3000/api/menu/1
