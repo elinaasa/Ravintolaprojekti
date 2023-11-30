@@ -26,5 +26,5 @@
       "vite-plugin-pwa/info"
     ]
   },
-  "include": ["src", "index.js"]
+  "include": ["src"]
 }
