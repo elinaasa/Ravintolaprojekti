@@ -1,4 +1,4 @@
-const apiUrl = 'https://student-restaurants.azurewebsites.net/api/v1';
+const apiUrl = 'http://localhost:5173/';
 const uploadUrl = 'https://student-restaurants.azurewebsites.net/uploads/';
 
 const positionOptions = {
