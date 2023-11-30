@@ -39,7 +39,7 @@ function prevSlide() {
 }
 
 function showSlides() {
-  timeOut = 3000;
+  timeOut = 10000;
 
   var slides = document.getElementsByClassName('slides');
   var dots = document.getElementsByClassName('dot');
