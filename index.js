@@ -1,14 +1,13 @@
 import express from 'express';
 import path from 'path';
 import {fileURLToPath} from 'url';
-import userRouter from './routers/user-routers.mjs';
-import mediaRouter from './routers/media-routers.mjs';
+import userRouter from './src/routes/user-routers.mjs';
 import {
   logger,
   notFoundHandler,
   errorHandler,
-} from './middlewares/middlewares.mjs';
-import authRouter from './routers/auth-router.mjs';
+} from './src/middlewares/middlewares.mjs';
+import authRouter from './src/routes/auth-router.mjs';
 
 const hostname = '127.0.0.1';
 const app = express();
@@ -42,7 +41,7 @@ app.get('/', (req, res) => {
 app.use('/api/auth', authRouter);
 
 // media endpoints
-app.use('/api/media', mediaRouter);
+// app.use('/api/media', mediaRouter);
 
 // user endpoints
 app.use('/api/user', userRouter);
