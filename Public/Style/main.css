@@ -16,13 +16,54 @@
   --contentFont: 'Open Sans', sans-serif;
 }
 
-.material-symbols-outlined {
-  font-variation-settings:
-    'FILL' 0,
-    'wght' 400,
-    'GRAD' 0,
-    'opsz' 24;
-  cursor: pointer;
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 30px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+.material-icons-outlined {
+  font-family: 'Material Icons Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 30px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
 }
 
 * {
@@ -32,18 +73,19 @@
 }
 
 #hero {
-   height: 70%;
-   width: auto;
-}
-
-body {
-  background-color: var(--platinum-2);
-  color: var(--gunmetal);
+  height: 70%;
+  width: auto;
 }
 
 main {
   width: 90%;
   margin: 0 auto;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--platinum-2);
+  color: var(--gunmetal);
 }
 
 p {
@@ -60,23 +102,25 @@ h6 {
   color: var(--indigo-dye);
 }
 
-
 /* NAVIGATION */
 
-/* NEW NAV BAR STARTS */
-.topnav {
+nav {
   background-color: var(--platinum-2);
   overflow: hidden;
+  width: 100%;
   font-family: var(--headerFont);
   display: flex;
   justify-content: center;
   align-items: baseline;
+  position: fixed;
+  transition: transform 0.2s;
 }
 
 /* Style the links inside the navigation bar */
-.topnav a {
+nav a {
   float: left;
-  color: var(--headerFont);
+  font: var(--headerFont);
+  color: var(--gunmetal);
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -84,82 +128,95 @@ h6 {
 }
 
 /* Change the color of links on hover */
-.topnav a:hover {
+nav a:hover {
   color: var(--caribbean-current);
 }
 
 /* Add a color to the active/current link */
-.topnav .logo {
+nav .logo {
   font-weight: 600;
   font-size: 2rem;
   margin-right: auto;
 }
 
-.topnav .nav-item {
+nav .nav-item {
   font-weight: 500;
   margin-right: -4px;
 }
 
-/* NEW NAV BAR ENDS */
+.hamburger {
+  position: relative;
+  right: 50px;
+  display: block;
+  width: 35px;
+  cursor: pointer;
 
-/*
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
+  appearance: none;
+  background: none;
+  outline: none;
+  border: none;
+}
+
+.hamburger .bar,
+.hamburger::after,
+.hamburger::before {
+  content: '';
+  display: block;
   width: 100%;
-  padding: 1.5rem;
+  height: 5px;
+  background-color: var(--indigo-dye);
+  margin: 6px 0px;
+  transition: 0.4s;
+}
+
+.hamburger.is-active:before {
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.hamburger.is-active:after {
+  transform: rotate(45deg) translate(-9px, -8px);
+}
+
+.hamburger.is-active .bar {
+  opacity: 0;
+}
+
+.mobile-nav {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  width: 100%;
   background-color: var(--platinum-2);
-  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
-/*  font-family: var(--headerFont);
+  padding-top: 120px;
+  transition: 0.4s;
 }
 
-.navbar-brand {
-  font-size: 2rem;
-  font-weight: 600;
-  color: var(--indigo-dye);
-}
-
-nav a {
+.mobile-nav a {
+  margin: 0 auto 16px;
+  width: 100%;
+  max-width: 200px;
+  display: block;
+  color: var(--gunmetal);
+  padding: 12px 16px;
+  text-align: center;
   text-decoration: none;
-  color: var(--indigo-dye);
-  font-size: 1.5rem;
-  font-weight: 600;
-  padding: 10px;
 }
 
-nav a:hover {
-  color: var(--caribbean-current);
+.mobile-nav.is-active {
+  left: 0;
 }
 
-nav a:active {
-  color: var(--cadet-gray);
-}
+@media (min-width: 767px) {
+  .mobile-nav {
+    display: none;
+  }
 
-.nav-items-right {
-  display: flex;
-  align-items: center;
+  .hamburger {
+    display: none;
+  }
 }
-
-.material-symbols-outlined {
-  font-size: 2rem;
-  color: var(--indigo-dye);
-  margin-top: 5px;
-}
-
-.material-symbols-outlined:hover {
-  color: var(--caribbean-current);
-}
-
-.material-symbols-outlined:active {
-  color: var(--cadet-gray);
-}
-
-.navbar-toggler {
-  display: none;
-}
-*/
 
 /* BODY */
 
@@ -189,7 +246,6 @@ nav a:active {
 .hero-container-content {
   text-align: left;
 }
-
 
 #lunchPlace {
   margin: 0;
@@ -227,7 +283,12 @@ nav a:active {
 #divider {
   height: 2px;
   width: 50%;
-  background: linear-gradient(90deg, var(--platinum-2), var(--indigo-dye), var(--platinum-2));
+  background: linear-gradient(
+    90deg,
+    var(--platinum-2),
+    var(--indigo-dye),
+    var(--platinum-2)
+  );
 }
 
 .lunch-list-days {
