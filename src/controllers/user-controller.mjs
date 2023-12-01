@@ -86,7 +86,6 @@ const putUser = async (req, res) => {
  */
 
 const deleteUser = async (req, res) => {
-  console.log('User deleted', req.params);
   const result = await deleteUserById('User deleted', req.params.id);
   if (result) {
     if (result.error) {
