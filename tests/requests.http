@@ -14,7 +14,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo2LCJ1c
 GET http://127.0.0.1:3000/api/user
 
 ### GET /users/:id
-GET http://127.0.0.1:3000/api/user/6
+GET http://127.0.0.1:3000/api/user/4
 
 ### POST /user
 POST http://127.0.0.1:3000/api/user
