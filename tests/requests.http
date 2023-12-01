@@ -4,17 +4,17 @@
 POST http://localhost:3000/api/auth/login
 Content-Type: application/json
 
-{"username": "Pekka", "password": "password123"}
+{"username": "hash", "password": "salasana"}
 
 ### GET my user info
 GET http://127.0.0.1:3000/api/auth/me
-Authorization: Bearer <token>
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo2LCJ1c2VybmFtZSI6Imhhc2giLCJlbWFpbCI6Imhhc2hAcGxpaXMuY29tIiwidXNlcl9sZXZlbF9pZCI6MiwiaWF0IjoxNzAxNDE1MTQ3fQ.m7bSEtAfHs5ipiDBxLgvYoX-8vQIxX_Pb2DFnjDyJkc
 
 ### GET /users
 GET http://127.0.0.1:3000/api/user
 
 ### GET /users/:id
-GET http://127.0.0.1:3000/api/user/1
+GET http://127.0.0.1:3000/api/user/6
 
 ### POST /user
 POST http://127.0.0.1:3000/api/user
@@ -25,8 +25,7 @@ content-type: application/json
     "username": "hash",
     "password": "salasana",
     "email": "hash@pliis.com",
-    "user_level_id": 1,
-    "created_at": "2023-04-02T05:56:41.000Z"
+    "user_level_id": 1
   }
 
 ### POST /user error
@@ -35,20 +34,19 @@ POST http://127.0.0.1:3000/api/user
 {"höpö": "höpö"}
 
 ### PUT /users/:id
-PUT http://127.0.0.1:3000/api/user/2
-Authorization: Bearer <token>
+PUT http://127.0.0.1:3000/api/user/6
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo2LCJ1c2VybmFtZSI6Imhhc2giLCJlbWFpbCI6Imhhc2hAcGxpaXMuY29tIiwidXNlcl9sZXZlbF9pZCI6MiwiaWF0IjoxNzAxNDE1MTQ3fQ.m7bSEtAfHs5ipiDBxLgvYoX-8vQIxX_Pb2DFnjDyJkc
 content-type: application/json
 
   {
-    "username": "",
-    "password": "",
-    "email": "",
-    "user_level_id": 3,
-    "created_at": ""
+    "username": "tetteis",
+    "password": "krgbhs",
+    "email": "menu@se.fi",
+    "user_level_id": 3
   }
 
 ### DELETE /users/:id
-DELETE http://127.0.0.1:3000/api/user/7
+DELETE http://127.0.0.1:3000/api/user/6
 
 #############################################
 
@@ -60,24 +58,24 @@ GET http://127.0.0.1:3000/api/menu/1
 
 ### POST /menus
 POST http://127.0.0.1:3000/api/menu
-Authorization: Bearer <token>
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo2LCJ1c2VybmFtZSI6Imhhc2giLCJlbWFpbCI6Imhhc2hAcGxpaXMuY29tIiwidXNlcl9sZXZlbF9pZCI6MiwiaWF0IjoxNzAxNDE1MTQ3fQ.m7bSEtAfHs5ipiDBxLgvYoX-8vQIxX_Pb2DFnjDyJkc
 
 {
   "name": "Kesämenu",
   "description": "Kesämenu 2021",
-  "created_at": "2021-04-02T05:56:41.000Z"
+  "diet": "gluteeniton"
 }
 
 ### PUT /menus/:id
 PUT http://127.0.0.1:3000/api/menu/1
-Authorization: Bearer <token>
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo2LCJ1c2VybmFtZSI6Imhhc2giLCJlbWFpbCI6Imhhc2hAcGxpaXMuY29tIiwidXNlcl9sZXZlbF9pZCI6MiwiaWF0IjoxNzAxNDE1MTQ3fQ.m7bSEtAfHs5ipiDBxLgvYoX-8vQIxX_Pb2DFnjDyJkc
 
 {
   "name": "Kesämenuuuuuuuuuuuu",
   "description": "Kesämenu 303030303",
-  "created_at": "2021-04-02T05:56:41.000Z"
+  "diet": "vege"
 }
 
 ### DELETE /menus/:id
 DELETE http://127.0.0.1:3000/api/menu/1
-Authorization: Bearer <token>
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo2LCJ1c2VybmFtZSI6Imhhc2giLCJlbWFpbCI6Imhhc2hAcGxpaXMuY29tIiwidXNlcl9sZXZlbF9pZCI6MiwiaWF0IjoxNzAxNDE1MTQ3fQ.m7bSEtAfHs5ipiDBxLgvYoX-8vQIxX_Pb2DFnjDyJkc

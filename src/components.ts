@@ -1,25 +1,5 @@
 import { isDailyMenu } from "./functions";
 import { Course, DailyMenu, WeeklyMenu } from "./interfaces/Menu";
-import { Restaurant } from "./interfaces/Restaurant";
-
-const restaurantRow = (restaurant: Restaurant) => {
-  const {name, address, company} = restaurant;
-  const tr = document.createElement('tr');
-  const nameCell = document.createElement('td');
-  nameCell.innerText = name;
-  // give addressCell td element a class name
-  const addressCell = document.createElement('td');
-  addressCell.classList.add('tableAddress');
-  addressCell.innerText = address;
-  // give companyCell td element a class name
-  const companyCell = document.createElement('td');
-  companyCell.classList.add('tableCompany');
-  companyCell.innerText = company;
-  tr.appendChild(nameCell);
-  tr.appendChild(addressCell);
-  tr.appendChild(companyCell);
-  return tr;
-};
 
 const restaurantModal = (restaurant: Restaurant, menu: DailyMenu | WeeklyMenu) => {
   const {name, address, city, postalCode, phone, company} = restaurant;
@@ -37,30 +17,30 @@ const restaurantModal = (restaurant: Restaurant, menu: DailyMenu | WeeklyMenu) =
 
     if (isDailyMenu(menu)) {
       menu.courses.forEach((course: Course) => {
-        const {name, diets, price} = course;
+        const {name, description, diet} = course;
         html += `
               <tr>
                 <td>${name}</td>
-                <td>${diets ?? ' - '}</td>
-                <td>${price ?? ' - '}</td>
+                <td>${description ?? ' - '}</td>
+                <td>${diet ?? ' - '}</td>
               </tr>
               `;
       });
     } else {
       menu.days.forEach((day) => {
-        const {date, courses} = day;
+        const {day_of_week, courses} = day;
         html += `
               <tr>
-                <td colspan="3">${date}</td>
+                <td colspan="3">${day_of_week}</td>
               </tr>
               `;
         courses.forEach((course: Course) => {
-          const {name, diets, price} = course;
+          const {name, description, diet} = course;
           html += `
                 <tr>
                   <td>${name}</td>
-                  <td>${diets ?? ' - '}</td>
-                  <td>${price ?? ' - '}</td>
+                  <td>${description ?? ' - '}</td>
+                  <td>${diet ?? ' - '}</td>
                 </tr>
                 `;
         });
@@ -70,12 +50,7 @@ const restaurantModal = (restaurant: Restaurant, menu: DailyMenu | WeeklyMenu) =
   return html;
 };
 
-const errorModal = (message: string) => {
-  const html = `
-        <h3>Error</h3>
-        <p>${message}</p>
-        `;
-  return html;
-};
+// TODO: Create li elements for menu items using DOM methods
 
-export {restaurantRow, restaurantModal, errorModal};
+
+export {restaurantModal};

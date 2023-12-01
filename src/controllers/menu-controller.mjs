@@ -30,7 +30,7 @@ const getMenusById = async (req, res) => {
   }
 };
 
-const postMenu = async (req, res) => {
+const postMenu = async (req, res, next) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     console.log('validation errors', errors.array());
@@ -39,15 +39,8 @@ const postMenu = async (req, res) => {
     return next(error);
   }
 
-  if (!errors.isEmpty()) {
-    // details about errors are in errors.array()
-    console.log(errors.array());
-    return res.status(400).json({message: 'Validation failed'});
-  }
-
   const {name, description, diet} = req.body;
   // req.user is added by authenticateToken middleware
-  const user_id = req.user.user_id;
   const newMenu = {name, description, diet};
   const result = await addMenu(newMenu);
   if (result.error) {
@@ -57,6 +50,7 @@ const postMenu = async (req, res) => {
 };
 
 const putMenu = async (req, res, next) => {
+  console.log('Request body:', req.body);
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     console.log('Validation errors', errors.array());
@@ -65,13 +59,7 @@ const putMenu = async (req, res, next) => {
     return next(error);
   }
 
-  if (!errors.isEmpty()) {
-    // details about errors are in errors.array()
-    console.log(errors.array());
-    return res.status(400).json({message: 'Validation failed'});
-  }
   console.log('Menu updated', req.params);
-  req.body.menu_id = req.user.user_id;
   const result = await updateMenuById(req.params.id, req.body);
   if (result.error) {
     return next(new Error(result.error));

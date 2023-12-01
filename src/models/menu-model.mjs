@@ -41,9 +41,9 @@ const addMenu = async menu => {
 };
 
 const updateMenuById = async (id, menu) => {
-  const {menu_id, name, description, diet} = media;
+  const {menu_id, name, description, diet} = menu;
   const sql = `UPDATE Menus SET menu_id=?, name=?, description=?, diet=? WHERE menu_id=?`;
-  const params = [menu_id, name, description, diet];
+  const params = [menu_id, name, description, diet, id];
   try {
     const result = await promisePool.query(sql, params);
     console.log('rows', rows);
@@ -55,7 +55,7 @@ const updateMenuById = async (id, menu) => {
 };
 
 const deleteMenuById = async id => {
-  const sql = `DELETE FROM Menus WHERE menu_id?`;
+  const sql = `DELETE FROM Menus WHERE menu_id=?`;
   const params = [id];
   try {
     const result = await promisePool.query(sql, params);
