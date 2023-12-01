@@ -17,7 +17,7 @@ const postLogin = async (req, res, next) => {
     return next(new Error('Database error: '));
   }
   console.log('postLogin', user);
-  const match = bcrypt.compareSync(req.body.password, user.password);
+  const match = bcrypt.compareSync(req.body.password, user?.password);
   if (match) {
     delete user.password;
     const token = jwt.sign(user, process.env.JWT_SECRET);

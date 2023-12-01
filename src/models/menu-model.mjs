@@ -14,8 +14,9 @@ const fetchAllMenus = async () => {
 
 const fetchMenuById = async id => {
   try {
-    const sql = `SELECT * FROM Menus WHERE id=?`;
+    const sql = `SELECT * FROM Menus WHERE menu_id=?`;
     const params = [id];
+    console.log('Executing query:', sql, 'with parameters:', params);
     const [rows] = await promisePool.query(sql, params);
     console.log('rows', rows);
     return rows[0];
@@ -41,7 +42,7 @@ const addMenu = async menu => {
 
 const updateMenuById = async (id, menu) => {
   const {menu_id, name, description, diet} = media;
-  const sql = `UPDATE Menus SET menu_id=?, name=?, description=?, diet=? WHERE id?`;
+  const sql = `UPDATE Menus SET menu_id=?, name=?, description=?, diet=? WHERE menu_id=?`;
   const params = [menu_id, name, description, diet];
   try {
     const result = await promisePool.query(sql, params);
