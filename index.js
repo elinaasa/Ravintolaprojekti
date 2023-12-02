@@ -1,5 +1,3 @@
-import express from 'express';
-import path from 'path';
 import {fileURLToPath} from 'url';
 import {
   logger,
@@ -9,6 +7,11 @@ import {
 import authRouter from './src/routes/auth-router.mjs';
 import menuRouter from './src/routes/menu-router.mjs';
 import userRouter from './src/routes/user-routers.mjs';
+import express from 'express';
+import path from 'path';
+import mysql from 'mysql';
+import session from 'express-session';
+import cors from 'cors';
 
 const hostname = '127.0.0.1';
 const app = express();
@@ -19,6 +22,8 @@ const __dirname = path.dirname(__filename);
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use('/docs', express.static(path.join(__dirname, '../docs')));
+// cors simplifies the process of adding the necessary headers to enable cross-origin requests
+app.use(cors());
 
 // simple custom middleware logging/debugging all requests
 app.use(logger);
