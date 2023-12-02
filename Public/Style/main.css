@@ -119,6 +119,10 @@ nav .nav-item {
   margin-right: -4px;
 }
 
+#login-icon {
+  cursor: pointer;
+}
+
 .hamburger {
   position: relative;
   right: 50px;
