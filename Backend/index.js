@@ -12,6 +12,7 @@ import path from 'path';
 import mysql from 'mysql';
 import session from 'express-session';
 import cors from 'cors';
+import {authenticateToken} from './src/middlewares/authentication.mjs';
 
 const hostname = '127.0.0.1';
 const app = express();
@@ -26,7 +27,6 @@ app.use(logger);
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use('/docs', express.static(path.join(__dirname, '../docs')));
-// cors simplifies the process of adding the necessary headers to enable cross-origin requests
 
 app.get('/', (req, res) => {
   const values = {
@@ -34,6 +34,10 @@ app.get('/', (req, res) => {
     message: 'Media items gonna be here',
   };
   res.render('home', values);
+});
+
+app.get('/success-page', authenticateToken, (req, res) => {
+  res.sendFile(path.join(__dirname, '../docs/success-page.html'));
 });
 
 // auth endpoints
