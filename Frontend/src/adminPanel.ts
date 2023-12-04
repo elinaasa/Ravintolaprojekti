@@ -11,7 +11,7 @@ interface MenuItem {
 
 async function fetchMenus(): Promise<MenuItem[]> {
     try {
-      const response = await fetch('https://yourapi.com/menus');
+      const response = await fetch('http://127.0.0.1:3000/api/menu');
       if (!response.ok) {
         throw new Error('Failed to fetch menus');
       }
@@ -21,13 +21,13 @@ async function fetchMenus(): Promise<MenuItem[]> {
       console.error('Error fetching menus:', error);
       return [];
     }
-  }
+  };
 
   // function to update menu data on the server
 
   async function updateMenus(updatedMenus: MenuItem[]): Promise<void> {
     try {
-      const response = await fetch('https://yourapi.com/menus', {
+      const response = await fetch('http://127.0.0.1:3000/api/menu', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
