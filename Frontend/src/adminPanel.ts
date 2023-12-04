@@ -9,95 +9,67 @@ interface MenuItem {
 
 // Function to fetch menu data from the server
 
-async function fetchMenus(): Promise<MenuItem[]> {
-    try {
-      const response = await fetch('http://127.0.0.1:3000/api/menu');
-      if (!response.ok) {
-        throw new Error('Failed to fetch menus');
-      }
-      const data = await response.json();
-      return data.menus;
-    } catch (error) {
-      console.error('Error fetching menus:', error);
-      return [];
-    }
+const getMenuData = async () => {
+    const response = await fetch('http://localhost:3000/menu');
+    const data = await response.json();
+    return data;
   };
 
-  // function to update menu data on the server
+  // function to update menu data on the server on the html page
 
-  async function updateMenus(updatedMenus: MenuItem[]): Promise<void> {
-    try {
-      const response = await fetch('http://127.0.0.1:3000/api/menu', {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ menus: updatedMenus }),
-      });
-  
-      if (!response.ok) {
-        throw new Error('Failed to update menus');
-      }
-  
-      // Handle success
-      // You might perform additional actions upon successful update
-    } catch (error) {
-      console.error('Error updating menus:', error);
-      // Handle error
-    }
-  }
+  const updateMenuData = async (data: MenuItem[]) => {
+    const response = await fetch('http://localhost:3000/menu', {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+    const responseData = await response.json();
+    return responseData;
+  };
 
-  // Frunction to display the menus
+  // Function to display the menus
 
-  async function displayMenus(): Promise<void> {
-    const menuList = document.getElementById('menuList');
-    const existingMenus: MenuItem[] = await fetchMenus();
-  
-    if (menuList) {
-      existingMenus.forEach(menu => {
-        const menuItemElement = document.createElement('div');
-        menuItemElement.textContent = menu.name;
-        menuList.appendChild(menuItemElement);
-      });
-    }
-  
-    const addMenuItemButton = document.getElementById('addMenuItem');
-    const newMenuItemInput = document.getElementById('newMenuItem');
-  
-    if (addMenuItemButton && newMenuItemInput) {
-      addMenuItemButton.addEventListener('click', () => {
-        const newMenuItemInput = document.getElementById('newMenuItem') as HTMLInputElement;
-
-        const newMenuItemName = newMenuItemInput.value;
-        const newMenu: MenuItem = {
-            id: existingMenus.length + 1,
-            name: newMenuItemName,
-            description: null, // Add the missing properties
-            diet: '',
-            week_number: 0,
-            day_of_week: 0,
-        };
-        existingMenus.push(newMenu);
-
-        const menuItemElement = document.createElement('div');
-        menuItemElement.textContent = newMenuItemName;
-        if (menuList) {
-            menuList.appendChild(menuItemElement);
+    const displayMenu = async () => {
+        const menuData = await getMenuData();
+        const menuContainer = document.querySelector('.menu-container');
+        if (menuContainer) {
+            menuContainer.innerHTML = '';
         }
-
-        newMenuItemInput.value = ''; // Clear input field after adding
-      });
-    }};
-
-    // Function to save the menus
-
-    const saveChangesButton = document.getElementById('saveChanges');
-    if (saveChangesButton) {
-        saveChangesButton.addEventListener('click', async () => {
-            const existingMenus: MenuItem[] = await fetchMenus();
-            await updateMenus(existingMenus);
-            alert('Changes saved successfully!');
+        menuData.forEach((menu: MenuItem) => {
+            if (menuContainer) {
+                const menuCard = document.createElement('div');
+                menuCard.classList.add('menu-card');
+                menuCard.innerHTML = `
+                    <h3>${menu.name}</h3>
+                    <p>${menu.description}</p>
+                    <p>${menu.diet}</p>
+                    <p>${menu.week_number}</p>
+                    <p>${menu.day_of_week}</p>
+                `;
+                menuContainer.appendChild(menuCard);
+            }
         });
     };
 
-    displayMenus();
+    // Function to save the menus
+const saveMenu = async () => {
+    const menuName = document.querySelector('#menu-name') as HTMLInputElement;
+    const menuDescription = document.querySelector('#menu-description') as HTMLInputElement;
+    const menuDiet = document.querySelector('#menu-diet') as HTMLInputElement;
+    const menuWeekNumber = document.querySelector('#menu-week-number') as HTMLInputElement;
+    const menuDayOfWeek = document.querySelector('#menu-day-of-week') as HTMLInputElement;
+    const menuData = await getMenuData();
+    const newMenu = {
+      id: menuData.length + 1,
+      name: menuName.value,
+      description: menuDescription.value,
+      diet: menuDiet.value,
+      week_number: parseInt(menuWeekNumber.value),
+      day_of_week: parseInt(menuDayOfWeek.value),
+    };
+    menuData.push(newMenu);
+    await updateMenuData(menuData);
+    displayMenu();
+  };

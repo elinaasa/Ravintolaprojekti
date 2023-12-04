@@ -1,24 +1,37 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MORO</title>
-  </head>
-  <body>
-    <!doctype html>
-    <html>
-      <head>
-        <title>Admin Panel</title>
-      </head>
-      <body>
-        <div id="menuList"></div>
-        <input type="text" id="newMenuItem" placeholder="New Menu Item" />
-        <button id="addMenuItem">Add Menu Item</button>
-        <button id="saveChanges">Save Changes</button>
-
-        <script src="adminPanel.js"></script>
-      </body>
-    </html>
-  </body>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Menu Admin Panel</title>
+  <style>
+    /* Add your CSS styles here */
+    .menu-card {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin: 5px;
+    }
+  </style>
+  <script src="./src/adminPanel.js"></script>
+</head>
+<body>
+  <div class="menu-container"></div>
+  
+  <div>
+    <label for="menu-name">Name:</label>
+    <input type="text" id="menu-name">
+    <br>
+    <label for="menu-description">Description:</label>
+    <input type="text" id="menu-description">
+    <br>
+    <label for="menu-diet">Diet:</label>
+    <input type="text" id="menu-diet">
+    <br>
+    <label for="menu-week-number">Week Number:</label>
+    <input type="number" id="menu-week-number">
+    <br>
+    <label for="menu-day-of-week">Day of Week:</label>
+    <input type="number" id="menu-day-of-week" min="1" max="5">
+    <br>
+    <button onclick="saveMenu()">Add Menu</button>
+  </div>
+</body>
 </html>
