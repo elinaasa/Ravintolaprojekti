@@ -18,15 +18,15 @@ const app = express();
 const port = 3000;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+app.use(cors());
+
+// simple custom middleware logging/debugging all requests
+app.use(logger);
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use('/docs', express.static(path.join(__dirname, '../docs')));
 // cors simplifies the process of adding the necessary headers to enable cross-origin requests
-app.use(cors());
-
-// simple custom middleware logging/debugging all requests
-app.use(logger);
 
 app.get('/', (req, res) => {
   const values = {

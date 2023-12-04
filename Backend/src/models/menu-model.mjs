@@ -27,11 +27,11 @@ const fetchMenuById = async id => {
 };
 
 const addMenu = async menu => {
-  const {menu_id, name, description, diet} = menu;
-  const sql = `INSERT INTO Menus (menu_id, name, description, diet) VALUES (?, ?, ?, ?)`;
-  const params = [menu_id, name, description, diet];
+  const {name, description, diet} = menu;
+  const sql = `INSERT INTO Menus (name, description, diet) VALUES (?, ?, ?)`;
+  const params = [name, description, diet];
   try {
-    const result = await promisePool.query(sql, params);
+    const rows = await promisePool.query(sql, params);
     console.log('rows', rows);
     return {message: 'Menu added'};
   } catch (e) {
@@ -41,11 +41,11 @@ const addMenu = async menu => {
 };
 
 const updateMenuById = async (id, menu) => {
-  const {menu_id, name, description, diet} = menu;
-  const sql = `UPDATE Menus SET menu_id=?, name=?, description=?, diet=? WHERE menu_id=?`;
-  const params = [menu_id, name, description, diet, id];
+  const {name, description, diet} = menu;
+  const sql = `UPDATE Menus SET name=?, description=?, diet=? WHERE menu_id=?`;
+  const params = [name, description, diet, id];
   try {
-    const result = await promisePool.query(sql, params);
+    const rows = await promisePool.query(sql, params);
     console.log('rows', rows);
     return {message: 'Menu updated'};
   } catch (e) {

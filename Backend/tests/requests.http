@@ -8,7 +8,7 @@ Content-Type: application/json
 
 ### GET my user info
 GET http://127.0.0.1:3000/api/auth/me
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo2LCJ1c2VybmFtZSI6Imhhc2giLCJlbWFpbCI6Imhhc2hAcGxpaXMuY29tIiwidXNlcl9sZXZlbF9pZCI6MiwiaWF0IjoxNzAxNDE1MTQ3fQ.m7bSEtAfHs5ipiDBxLgvYoX-8vQIxX_Pb2DFnjDyJkc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo2LCJ1c2VybmFtZSI6Imhhc2giLCJlbWFpbCI6Imhhc2hAcGxpaXMuY29tIiwidXNlcl9sZXZlbF9pZCI6MiwiaWF0IjoxNzAxNjg5NDI1fQ.JK4mHrBX07DAQiBgU_li5l9SdrrLVHCuvjMSCScKLNs
 
 ### GET /users
 GET http://127.0.0.1:3000/api/user
@@ -21,10 +21,10 @@ POST http://127.0.0.1:3000/api/user
 content-type: application/json
 
   {
-    "user_id": "7",
-    "username": "hash",
-    "password": "salasana",
-    "email": "hash@pliis.com",
+    "user_id": "20",
+    "username": "testitoimi",
+    "password": "testisalasana",
+    "email": "testitestitesti@pliis.com",
     "user_level_id": 1
   }
 
@@ -59,6 +59,7 @@ GET http://127.0.0.1:3000/api/menu/1
 ### POST /menus
 POST http://127.0.0.1:3000/api/menu
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo2LCJ1c2VybmFtZSI6Imhhc2giLCJlbWFpbCI6Imhhc2hAcGxpaXMuY29tIiwidXNlcl9sZXZlbF9pZCI6MiwiaWF0IjoxNzAxNDE1MTQ3fQ.m7bSEtAfHs5ipiDBxLgvYoX-8vQIxX_Pb2DFnjDyJkc
+Content-Type: application/json
 
 {
   "name": "Kesämenu",
@@ -69,13 +70,15 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo2LCJ1c
 ### PUT /menus/:id
 PUT http://127.0.0.1:3000/api/menu/1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo2LCJ1c2VybmFtZSI6Imhhc2giLCJlbWFpbCI6Imhhc2hAcGxpaXMuY29tIiwidXNlcl9sZXZlbF9pZCI6MiwiaWF0IjoxNzAxNDE1MTQ3fQ.m7bSEtAfHs5ipiDBxLgvYoX-8vQIxX_Pb2DFnjDyJkc
+Content-Type: application/json
 
 {
-  "name": "Kesämenuuuuuuuuuuuu",
-  "description": "Kesämenu 303030303",
-  "diet": "vege"
+  "name": "Grilled Chicken Salad",
+  "description": "Fresh greens with grilled chicken breast",
+  "diet": "Lactose-Free, Gluten-Free"
 }
 
 ### DELETE /menus/:id
 DELETE http://127.0.0.1:3000/api/menu/1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo2LCJ1c2VybmFtZSI6Imhhc2giLCJlbWFpbCI6Imhhc2hAcGxpaXMuY29tIiwidXNlcl9sZXZlbF9pZCI6MiwiaWF0IjoxNzAxNDE1MTQ3fQ.m7bSEtAfHs5ipiDBxLgvYoX-8vQIxX_Pb2DFnjDyJkc
+Content-Type: application/json

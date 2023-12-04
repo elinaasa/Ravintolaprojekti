@@ -31,6 +31,7 @@ const getMenusById = async (req, res) => {
 };
 
 const postMenu = async (req, res, next) => {
+  console.log(req.body);
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     console.log('validation errors', errors.array());
@@ -60,7 +61,7 @@ const putMenu = async (req, res, next) => {
   }
 
   console.log('Menu updated', req.params);
-  const result = await updateMenuById(req.params.id, req.body);
+  const result = await updateMenuById(req.params.menu_id, req.body);
   if (result.error) {
     return next(new Error(result.error));
   }
