@@ -14,4 +14,4 @@ interface Menu {
   courses: Course[];
 }
 
-export { Course, Menu };
+export type { Course, Menu };
