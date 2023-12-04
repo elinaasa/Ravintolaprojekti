@@ -12,12 +12,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ravintolaprojekti - Lounas</title>
-    <link rel="stylesheet" href="../Public/Style/lunch.css" />
-    <link rel="stylesheet" href="../Public/Style/slideshow.css" />
-    <link rel="stylesheet" href="../Public/Style/main.css" />
-    <link rel="stylesheet" href="../Public/Style/login.css">
+    <link rel="stylesheet" href="/frontend/public/Style/login.css" />
+    <link rel="stylesheet" href="/frontend/public/Style/lunch.css" />
+    <link rel="stylesheet" href="/frontend/public/Style/main.css" 
     <script src="../src/login.js" defer></script>
-    <script src="../src/interfaces/Menu.ts" defer></script>
+    <script src="/src/types.js" defer></script>
+    <script src="/src/main.js" defer></script>
+    <script src="/frontend/src/components.js" defer></script>
+
     <script defer src="../src/slideshow.js"></script>
   </head>
   <body>
@@ -107,8 +109,10 @@
               <span class="dot"></span>
             </div>
           </div>
-      </div>
-      <div class="lunch-container-right">
+      </div>    
+      <div id="menuContainer"></div>
+      
+      <!-- <div class="lunch-container-right">
         <div class="lunch-container-content">
         <h1 class="lunch-header">Lounas / 12€</h1>
         <h3 class="lunch-list-days">Maanantai</h3>
@@ -181,7 +185,7 @@
             </div>
           </div>
         </div>
-        <div class="weeklyLunch-container-right">
+        <div class="weeklyLunch-container-right"> -->
           <img src="../Public/Image/food-and-restaurant.png" alt="" />
         </div>
       </div>
