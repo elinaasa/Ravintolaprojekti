@@ -7,4 +7,11 @@ interface Course {
   diet: string;
 }
 
-export { Course };
+interface Menu {
+  menu_id: number;
+  week_number: number;
+  day_of_week: number;
+  courses: Course[];
+}
+
+export { Course, Menu };
