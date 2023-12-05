@@ -3,11 +3,47 @@
   <head>
     <title>Admin Panel</title>
     <style>
-      /* Add your CSS styles here */
+      :root {
+        --gunmetal: #1d2d2dff;
+        --indigo-dye: #19415aff;
+        --dim-gray: #746b69ff;
+        --cadet-gray: #85919cff;
+        --caribbean-current: #3e666aff;
+        --jasmine: #f5db6dff;
+        --platinum: #d1dcdeff;
+        --platinum-2: #e2e2e4ff;
+        --white: #fefefeff;
+      }
+
+      :root {
+        --mainFont: "Roboto", sans-serif;
+        --headerFont: "League Spartan", sans-serif;
+        --contentFont: "Open Sans", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      h3 {
+        font-family: var(--headerFont);
+        color: var(--indigo-dye);
+        font-size: 1.5rem;
+        margin: 0;
+      }
+
       .menu-card {
-        border: 1px solid #ccc;
-        padding: 10px;
-        margin: 5px;
+        border: 1px solid var(--cadet-gray);
+        padding: 15px;
+        margin: 10px;
+        font-family: var(--contentFont);
+        color: var(--gunmetal);
+        background-color: var(--platinum-2);
+        border-radius: 8px;
+      }
+
+      .menu-card:hover {
+        box-shadow: 5px 10px 18px #888888;
       }
     </style>
     <script src="./src/adminPanel.js" defer></script>
