@@ -128,3 +128,13 @@ const showMenu = async () => {
 };
 
 displayMenu();
+
+const checkToken = () => {
+  const token = localStorage.getItem("token");
+  // Tarkasta palvelimelta, onko token oikea
+  if (!token) {
+    window.location.href = "http://127.0.0.1:5501/Frontend/index.html";
+  }
+};
+
+checkToken();

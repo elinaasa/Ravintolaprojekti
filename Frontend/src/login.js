@@ -35,3 +35,28 @@ document
 
 const overlay = document.getElementById("overlay");
 const modalWrapper = document.querySelector(".modal-wrapper");
+
+document
+  .querySelector("#login-form")
+  .addEventListener("submit", async function (event) {
+    event.preventDefault();
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+    const loginData = { username, password };
+    const response = await fetch("http://localhost:3000/api/auth/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(loginData),
+    });
+    const data = await response.json();
+    console.log(data);
+    if (data.token) {
+      localStorage.setItem("token", data.token);
+      localStorage.setItem("user", JSON.stringify(data.user));
+      window.location.href = "http://127.0.0.1:5501/Frontend/admin.html";
+    } else {
+      alert("Login failed");
+    }
+  });

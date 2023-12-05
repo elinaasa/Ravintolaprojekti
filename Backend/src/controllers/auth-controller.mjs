@@ -21,8 +21,8 @@ const postLogin = async (req, res, next) => {
   if (match) {
     delete user.password;
     const token = jwt.sign(user, process.env.JWT_SECRET);
-    res.redirect(`/docs/success-page.html?token=${token}`);
-    //res.json({message: 'Logged in', token, user});
+    //res.redirect(`/docs/success-page.html?token=${token}`);
+    res.json({message: 'Logged in', token, user});
   } else {
     const error = new Error('Invalid password');
     error.status = 401;
