@@ -37,73 +37,27 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var components_1 = require("./components");
-var apiUrl = "http://localhost:3000/api/menu";
-// Function to fetch menu data from the API
-function fetchMenuData() {
-    return __awaiter(this, void 0, void 0, function () {
-        var response, error_1, errorModalHtml;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0:
-                    _a.trys.push([0, 3, , 4]);
-                    return [4 /*yield*/, fetch(apiUrl)];
-                case 1:
-                    response = _a.sent();
-                    if (!response.ok) {
-                        throw new Error("Failed to fetch menu data: ".concat(response.statusText));
-                    }
-                    return [4 /*yield*/, response.json()];
-                case 2: return [2 /*return*/, _a.sent()];
-                case 3:
-                    error_1 = _a.sent();
-                    console.error(error_1);
-                    errorModalHtml = (0, components_1.errorModal)("Failed to fetch menu data");
-                    document.getElementById("menuContainer").innerHTML = errorModalHtml;
-                    throw error_1; // Propagate the error to handle it elsewhere if needed
-                case 4: return [2 /*return*/];
-            }
-        });
-    });
-}
-// Function to display the menu
-function displayMenu() {
-    return __awaiter(this, void 0, void 0, function () {
-        var menuContainer, menuData, dailyMenuHtml, menuTable_1, error_2;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0:
-                    menuContainer = document.getElementById("menuContainer");
-                    _a.label = 1;
-                case 1:
-                    _a.trys.push([1, 3, , 4]);
-                    return [4 /*yield*/, fetchMenuData()];
-                case 2:
-                    menuData = _a.sent();
-                    dailyMenuHtml = (0, components_1.DailyMenu)(menuData.course, menuData.menu);
+var displayMenu = function () { return __awaiter(void 0, void 0, void 0, function () {
+    var menuData, menuContainer;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0: return [4 /*yield*/, (0, components_1.getMenuData)()];
+            case 1:
+                menuData = _a.sent();
+                menuContainer = document.querySelector('.menu-container');
+                if (menuContainer) {
+                    menuContainer.innerHTML = '';
+                }
+                menuData.forEach(function (menu) {
                     if (menuContainer) {
-                        if (dailyMenuHtml !== undefined) {
-                            menuContainer.innerHTML = dailyMenuHtml;
-                        }
-                        else {
-                            menuContainer.innerHTML = "";
-                        }
+                        var menuCard = document.createElement('div');
+                        menuCard.classList.add('menu-card');
+                        menuCard.innerHTML = "\n        <h3>".concat(menu.name, "</h3>\n        <p>").concat(menu.description, "</p>\n        <p>").concat(menu.diet, "</p>\n        <p>").concat(menu.week_number, "</p>\n        <p>").concat(menu.day_of_week, "</p>\n        <input type=\"text\" id=\"menu-name\" placeholder=\"Name\" />\n        <input type=\"text\" id=\"menu-description\" placeholder=\"Description\" />\n        <input type=\"text\" id=\"menu-diet\" placeholder=\"Diet\" />\n        <input type=\"text\" id=\"menu-week-number\" placeholder=\"Week Number\" />\n        <input type=\"text\" id=\"menu-day-of-week\" placeholder=\"Day of Week\" />\n        <button id=\"save-menu\">Save Menu</button>\n      ");
+                        menuContainer.appendChild(menuCard);
                     }
-                    menuTable_1 = document.createElement("table");
-                    menuData.menu.courses.forEach(function (course) {
-                        var menuRow = (0, components_1.MenuRows)(course);
-                        menuTable_1.appendChild(menuRow);
-                    });
-                    if (menuContainer) {
-                        menuContainer.appendChild(menuTable_1);
-                    }
-                    return [3 /*break*/, 4];
-                case 3:
-                    error_2 = _a.sent();
-                    return [3 /*break*/, 4];
-                case 4: return [2 /*return*/];
-            }
-        });
+                });
+                return [2 /*return*/];
+        }
     });
-}
-// Call the function to display the menu
+}); };
 displayMenu();

@@ -1,17 +1,11 @@
-interface Course {
-  menu_id: number;
+interface MenuItem {
+  id: number;
   name: string;
-  description: string;
-  week_number: number;
-  day_of_week: number;
+  description: string | null;
   diet: string;
-}
-
-interface Menu {
-  menu_id: number;
   week_number: number;
   day_of_week: number;
-  courses: Course[];
 }
 
-export type { Course, Menu };
+
+export type { MenuItem };
