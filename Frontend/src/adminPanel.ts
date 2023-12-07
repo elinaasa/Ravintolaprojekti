@@ -25,7 +25,7 @@ const updateMenuData = async (data: Menu): Promise<Menu | null> => {
       alert("You must be logged in to update menu data");
       return null;
     }
-    const response = await fetch("http://localhost:3000/api/menu/" + data.id, {
+    const response = await fetch("http://localhost:3000/api/menu/" + data.menu_id, {
       method: "PUT",
       headers: {
         Authorization: "Bearer " + token,
@@ -88,7 +88,7 @@ const displayMenu = async (): Promise<void> => {
       form.addEventListener("submit", async (event) => {
         event.preventDefault();
         const newMenu: Menu = {
-          id: menu.menu_id,
+          menu_id: menu.menu_id,
           name: input1.value,
           description: input2.value,
           diet: input3.value,
