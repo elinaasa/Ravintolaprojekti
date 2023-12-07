@@ -21,11 +21,15 @@ console.log(getMenuData());
 const displayMenu = async () => {
   const menuData = await getMenuData();
   const menuContainer = document.querySelector('.lunch-items');
+
   if (menuContainer) {
     menuContainer.innerHTML = '';
   }
+
+  let lunchItems;
+
   menuData.forEach((menu) => {
-    console.log(menu);
+    // console.log(menu);
     if (menuContainer) {
       const lunchItems = document.createElement('div');
       lunchItems.classList.add('lunch-items');
@@ -37,12 +41,19 @@ const displayMenu = async () => {
       p1.innerHTML = menu.description;
       const p2 = document.createElement('p');
       p2.innerHTML = menu.diet;
+
       lunchItems.appendChild(day);
       lunchItems.appendChild(h2);
       lunchItems.appendChild(p1);
       lunchItems.appendChild(p2);
+
+      if (menuContainer) {
+        menuContainer.appendChild(lunchItems);
+      }
     }
-    displayMenu();
   });
-  menuContainer.appendChild(lunchItems);
 };
+
+displayMenu();
+
+console.log(displayMenu());
