@@ -15,9 +15,9 @@
     <title>Ravintolaprojekti</title>
     <link rel="stylesheet" href="Public/Style/main.css" />
     <link rel="stylesheet" href="Public/Style/login.css" />
-    <script src="src/hamburger.js"></script>
-    <script src="src/login.js" defer></script>
-    <script src="src/index.js" defer></script>
+    <script src="./src/hamburger.js"></script>
+    <script src="./src/login.js" defer></script>
+    <script src="./src/main.js" defer></script>
   </head>
   <body>
     <header>
@@ -97,7 +97,6 @@
     <!-- LOGIN MODAL ENDS HERE -->
 
     <main>
-      <div class="menu-container"></div>
     <div class="hero-container">
       <div class="hero-container-left">
         <div class="hero-container-content">
@@ -117,8 +116,9 @@
       <div class="lunch-container-right">
         <div class="lunch-container-content">
         <h1 id="lunch-header">Lounas / 12€</h1>
-        <h3 class="lunch-list-days">Maanantai</h3>
-        <div class="lunch-items">
+        <h3 class="lunch-list-days" id="week-day">Placeholder</h3>
+        <div class="menu-container"></div>
+        <!-- <div class="lunch-items">
           <p>Grillattu Kana Salaatti</p>
           <p>Tuoreita vihreitä grillatun kanan rinnan kera</p>
           <p>Laktoositon, Gluteeniton</p>
@@ -126,7 +126,7 @@
           <p>Vegetaarinen Pasta</p>
           <p>Pasta sesonkivihanneksilla ja tomaattikastikkeella (sisältää gluteenia)</p>
           <p>Laktoositon</p>
-        </div>
+        </div> -->
         <button class="arrow-button" onclick="location.href='./docs/lunch.html#weeklyLunch'">KATSO KOKO VIIKON MENU<span class="arrow"></span></button>
       </div>
       </div>
