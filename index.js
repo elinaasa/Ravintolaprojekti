@@ -1,3 +1,4 @@
+import express from 'express';
 import {fileURLToPath} from 'url';
 import {
   logger,
@@ -7,7 +8,6 @@ import {
 import authRouter from './src/routes/auth-router.mjs';
 import menuRouter from './src/routes/menu-router.mjs';
 import userRouter from './src/routes/user-routers.mjs';
-import express from 'express';
 import path from 'path';
 import cors from 'cors';
 
@@ -16,7 +16,6 @@ const app = express();
 const port = 3000;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-// app.use(cors());
 
 // simple custom middleware logging/debugging all requests
 app.use(logger);
