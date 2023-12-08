@@ -3,16 +3,16 @@ import {
   logger,
   notFoundHandler,
   errorHandler,
-} from './src/middlewares/middlewares.mjs';
-import authRouter from './src/routes/auth-router.mjs';
-import menuRouter from './src/routes/menu-router.mjs';
-import userRouter from './src/routes/user-routers.mjs';
+} from '../src/middlewares/middlewares.mjs';
+import authRouter from '../src/routes/auth-router.mjs';
+import menuRouter from '../src/routes/menu-router.mjs';
+import userRouter from '../src/routes/user-routers.mjs';
 import express from 'express';
 import path from 'path';
 import mysql from 'mysql';
 import session from 'express-session';
 import cors from 'cors';
-import {authenticateToken} from './src/middlewares/authentication.mjs';
+import {authenticateToken} from '../src/middlewares/authentication.mjs';
 
 const hostname = '127.0.0.1';
 const app = express();
