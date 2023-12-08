@@ -7,23 +7,19 @@ import {
 import authRouter from './src/routes/auth-router.mjs';
 import menuRouter from './src/routes/menu-router.mjs';
 import userRouter from './src/routes/user-routers.mjs';
-import express from 'express';
 import path from 'path';
-import mysql from 'mysql';
-import session from 'express-session';
 import cors from 'cors';
-import {authenticateToken} from './src/middlewares/authentication.mjs';
+import express from 'express';
 
 const hostname = '127.0.0.1';
 const app = express();
 const port = 3000;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-app.use(cors());
 
 // simple custom middleware logging/debugging all requests
 app.use(logger);
-
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use('/docs', express.static(path.join(__dirname, '../docs')));
@@ -36,9 +32,9 @@ app.get('/', (req, res) => {
   res.render('home', values);
 });
 
-app.get('/success-page', authenticateToken, (req, res) => {
-  res.sendFile(path.join(__dirname, '../docs/success-page.html'));
-});
+// app.get('/success-page', authenticateToken, (req, res) => {
+//   res.sendFile(path.join(__dirname, '../docs/success-page.html'));
+// });
 
 // auth endpoints
 app.use('/api/auth', authRouter);
