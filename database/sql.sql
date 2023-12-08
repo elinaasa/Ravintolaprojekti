@@ -196,7 +196,7 @@ INSERT INTO Menus (name, description, diet, week_number, day_of_week) VALUES
   ('Vegetaariset Sushirullat', 'Sushirullat avokadolla, kurkulla ja etikkakurkulla (sisältää gluteenia)', 'Laktoositon', 4, 5);
 
 -- Week 49
-INSERT INTO menu_items (name, description, diet, week_number, day_of_week) VALUES
+INSERT INTO Menus (name, description, diet, week_number, day_of_week) VALUES
 ('Mediterranean Chickpea Salad', 'Chickpea salad with tomatoes, cucumber, and feta cheese (contains lactose)', 'Lactose-Free', 49, 1),
 ('Vegetable Stir-Fry with Tofu', 'Stir-fried vegetables with tofu in teriyaki sauce', 'Lactose-Free, Gluten-Free, Vegan', 49, 1),
 ('Avocado and Black Bean Wrap', 'Wrap with avocado, black beans, and corn salsa (contains gluten)', 'Lactose-Free', 49, 2),
@@ -209,7 +209,7 @@ INSERT INTO menu_items (name, description, diet, week_number, day_of_week) VALUE
 ('Vegetarian Sushi Rolls', 'Sushi rolls with avocado, cucumber, and pickled radish (contains gluten)', 'Lactose-Free', 49, 5);
 
 -- Week 50
-INSERT INTO menu_items (name, description, diet, week_number, day_of_week) VALUES
+INSERT INTO Menus (name, description, diet, week_number, day_of_week) VALUES
 ('Grilled Chicken Salad', 'Fresh greens with grilled chicken breast', 'Lactose-Free, Gluten-Free', 50, 1),
 ('Vegetarian Pasta', 'Pasta with seasonal vegetables and tomato sauce (contains gluten)', 'Lactose-Free', 50, 1),
 ('Salmon Quinoa Bowl', 'Quinoa bowl with grilled salmon and vegetables', 'Lactose-Free, Gluten-Free', 50, 2),
@@ -222,7 +222,7 @@ INSERT INTO menu_items (name, description, diet, week_number, day_of_week) VALUE
 ('Mushroom Risotto', 'Creamy risotto with mushrooms and Parmesan cheese (contains gluten)', 'Lactose-Free', 50, 5);
 
 -- Week 51
-INSERT INTO menu_items (name, description, diet, week_number, day_of_week) VALUES
+INSERT INTO Menus (name, description, diet, week_number, day_of_week) VALUES
 ('Teriyaki Chicken Bowl', 'Bowl with teriyaki chicken, rice, and steamed broccoli', 'Lactose-Free', 51, 1),
 ('Mushroom Risotto', 'Creamy risotto with assorted mushrooms and Parmesan cheese (contains lactose)', 'None', 51, 1),
 ('Caesar Salad with Grilled Shrimp', 'Classic Caesar salad with grilled shrimp', 'Lactose-Free', 51, 2),
@@ -235,7 +235,7 @@ INSERT INTO menu_items (name, description, diet, week_number, day_of_week) VALUE
 ('Vegetarian Tacos', 'Tacos with black beans, corn, tomatoes, and guacamole', 'Lactose-Free', 51, 5);
 
 -- Week 52
-INSERT INTO menu_items (name, description, diet, week_number, day_of_week) VALUES
+INSERT INTO Menus (name, description, diet, week_number, day_of_week) VALUES
 ('Grilled Salmon Salad', 'Fresh salad with grilled salmon and citrus dressing', 'Lactose-Free, Gluten-Free', 52, 1),
 ('Quinoa and Black Bean Bowl', 'Bowl with quinoa, black beans, and assorted veggies', 'Lactose-Free, Gluten-Free, Vegan', 52, 1),
 ('Caprese Salad Wrap', 'Wrap with caprese salad and balsamic glaze (contains gluten)', 'Lactose-Free, Vegan', 52, 2),
