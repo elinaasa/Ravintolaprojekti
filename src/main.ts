@@ -7,8 +7,8 @@ interface Menu {
     week_number: number;
   }
 
-  
-const getMenuData2 = async (): Promise<Menu[]> => {
+
+const getMenuData = async (): Promise<Menu[]> => {
   try {
     const response = await fetch("http://localhost:3000/api/menu");
     const data = await response.json();
@@ -48,31 +48,29 @@ function getWeekDayName(day: number): string {
 
 console.log(getWeekDayName(0));
 
-const displayMenu2 = async (): Promise<void> => {
-  const menuData = await getMenuData2();
-  const menuContainer = document.querySelector(".menu-container");
-  if (menuContainer) {
-    menuContainer.innerHTML = "";
-  }
+const displayMenu = async (weekday: number, weeknumber: number, container: HTMLElement): Promise<void> => {
+  console.log("displayMenu");
+  const menuData = await getMenuData();
+  const menuContainer = container;
 
-  const currentDate = new Date();
-  const currentDayOfWeek = getWeekDay(currentDate);
-  const currentWeekNumber = getWeekNumber(currentDate);
 
   const filteredMenu = menuData.filter(
     (menu) =>
-      menu.day_of_week === currentDayOfWeek &&
-      menu.week_number === currentWeekNumber
+      menu.day_of_week === weekday &&
+      menu.week_number === weeknumber
   );
 
+  const day = document.createElement("h3");
+  day.innerText = getWeekDayName(filteredMenu[0].day_of_week - 1);
+  if (menuContainer) {
+    menuContainer.appendChild(day);
+  }
+
+  console.log(menuData);
   filteredMenu.forEach((menu) => {
     const menuCard = document.createElement("div");
     menuCard.classList.add("menu-card");
 
-    const day = document.querySelector("#week-day") as HTMLElement;
-    if (day) {
-        day.innerText = getWeekDayName(menu.day_of_week - 1);
-    }
 
     const h3 = document.createElement("h3");
     h3.innerHTML = menu.name;
@@ -83,7 +81,6 @@ const displayMenu2 = async (): Promise<void> => {
     const p2 = document.createElement("p");
     p2.innerHTML = menu.diet;
 
-    menuCard.appendChild(day);
     menuCard.appendChild(h3);
     menuCard.appendChild(p1);
     menuCard.appendChild(p2);
@@ -93,5 +90,15 @@ const displayMenu2 = async (): Promise<void> => {
     }
   });
 };
+const currentDate = new Date();
+const currentDayOfWeek = getWeekDay(currentDate);
+const currentWeekNumber = getWeekNumber(currentDate);
 
-displayMenu2();
+displayMenu(currentDayOfWeek, currentWeekNumber, document.querySelector(".menu-container"));
+
+
+
+for (let i = 1; i < 8; i++) {
+    displayMenu(i, currentWeekNumber, document.querySelector(".weeklyLunch-container"));
+}
+
