@@ -1,20 +1,17 @@
-import { fileURLToPath } from "url";
+import {fileURLToPath} from 'url';
 import {
   logger,
   notFoundHandler,
   errorHandler,
-} from "./Backend/src/middlewares/middlewares.mjs";
-import authRouter from "./Backend/src/routes/auth-router.mjs";
-import menuRouter from "./Backend/src/routes/menu-router.mjs";
-import userRouter from "./Backend/src/routes/user-routers.mjs";
-import express from "express";
-import path from "path";
-import mysql from "mysql";
-import session from "express-session";
-import cors from "cors";
-import { authenticateToken } from "./Backend/src/middlewares/authentication.mjs";
+} from './src/middlewares/middlewares.mjs';
+import authRouter from './src/routes/auth-router.mjs';
+import menuRouter from './src/routes/menu-router.mjs';
+import userRouter from './src/routes/user-routers.mjs';
+import express from 'express';
+import path from 'path';
+import cors from 'cors';
 
-const hostname = "127.0.0.1";
+const hostname = '127.0.0.1';
 const app = express();
 const port = 3000;
 const __filename = fileURLToPath(import.meta.url);
@@ -23,17 +20,17 @@ const __dirname = path.dirname(__filename);
 
 // simple custom middleware logging/debugging all requests
 app.use(logger);
-
+app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use("/docs", express.static(path.join(__dirname, "../docs")));
+app.use(express.urlencoded({extended: true}));
+app.use('/docs', express.static(path.join(__dirname, '../docs')));
 
-app.get("/", (req, res) => {
+app.get('/', (req, res) => {
   const values = {
-    title: "REST API media",
-    message: "Media items gonna be here",
+    title: 'REST API media',
+    message: 'Media items gonna be here',
   };
-  res.render("home", values);
+  res.render('home', values);
 });
 
 // app.get('/success-page', authenticateToken, (req, res) => {
@@ -41,13 +38,13 @@ app.get("/", (req, res) => {
 // });
 
 // auth endpoints
-app.use("/api/auth", authRouter);
+app.use('/api/auth', authRouter);
 
 // user endpoints
-app.use("/api/user", userRouter);
+app.use('/api/user', userRouter);
 
 // menu endpoints
-app.use("/api/menu", menuRouter);
+app.use('/api/menu', menuRouter);
 
 // 404 & error handler
 app.use(notFoundHandler);
