@@ -25,13 +25,11 @@ function getWeekNumber(date: Date): number {
   return Math.ceil((pastDaysOfYear + firstDayOfYear.getDay() + 1) / 7);
 }
 
-console.log(getWeekNumber(new Date()));
-
 function getWeekDay(date: Date): number {
-  return date.getDay();
+  // return date.getDay();
+  const maanantai = new Date('December 4, 2023 00:00:00')
+  return maanantai.getDay();
 }
-
-console.log(getWeekNumber(new Date()));
 
 function getWeekDayName(day: number): string {
   const days = [
@@ -46,10 +44,8 @@ function getWeekDayName(day: number): string {
   return days[day];
 }
 
-console.log(getWeekDayName(0));
 
 const displayMenu = async (weekday: number, weeknumber: number, container: HTMLElement): Promise<void> => {
-  console.log("displayMenu");
   const menuData = await getMenuData();
   const menuContainer = container;
 
@@ -60,30 +56,29 @@ const displayMenu = async (weekday: number, weeknumber: number, container: HTMLE
       menu.week_number === weeknumber
   );
 
-  const day = document.createElement("h3");
+  const day = document.createElement("h2");
   day.innerText = getWeekDayName(filteredMenu[0].day_of_week - 1);
   if (menuContainer) {
     menuContainer.appendChild(day);
   }
 
-  console.log(menuData);
   filteredMenu.forEach((menu) => {
     const menuCard = document.createElement("div");
     menuCard.classList.add("menu-card");
 
 
-    const h3 = document.createElement("h3");
-    h3.innerHTML = menu.name;
+    const name = document.createElement("h3");
+    name.innerHTML = menu.name;
 
-    const p1 = document.createElement("p");
-    p1.innerHTML = menu.description;
+    const desc = document.createElement("p");
+    desc.innerHTML = menu.description;
 
-    const p2 = document.createElement("p");
-    p2.innerHTML = menu.diet;
+    const diet = document.createElement("h4");
+    diet.innerHTML = menu.diet;
 
-    menuCard.appendChild(h3);
-    menuCard.appendChild(p1);
-    menuCard.appendChild(p2);
+    menuCard.appendChild(name);
+    menuCard.appendChild(desc);
+    menuCard.appendChild(diet);
 
     if (menuContainer) {
       menuContainer.appendChild(menuCard);
@@ -99,6 +94,8 @@ displayMenu(currentDayOfWeek, currentWeekNumber, document.querySelector(".menu-c
 
 
 for (let i = 1; i < 8; i++) {
-    displayMenu(i, currentWeekNumber, document.querySelector(".weeklyLunch-container"));
+    displayMenu(i, currentWeekNumber, document.querySelector(".weeklyLunch-right"));
 }
+
+
 

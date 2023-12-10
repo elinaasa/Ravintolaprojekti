@@ -151,7 +151,6 @@ function fetchMenuData() {
           return [4 /*yield*/, response.json()];
         case 2:
           data = _a.sent();
-          console.log(data);
           return [2 /*return*/, data];
         case 3:
           error_1 = _a.sent();

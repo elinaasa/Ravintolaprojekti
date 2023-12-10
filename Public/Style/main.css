@@ -1,5 +1,5 @@
 :root {
-  --gunmetal: #1d2d2dff;
+  --gunmetal: rgb(25, 46, 46);
   --indigo-dye: #19415aff;
   --dim-gray: #746b69ff;
   --cadet-gray: #85919cff;
@@ -18,7 +18,7 @@
 
 .material-icons-outlined {
   font-family: "Material Icons Outlined";
-  font-weight: normal;
+  font-weight: lighter;
   font-style: normal;
   font-size: 30px; /* Preferred icon size */
   display: inline-block;
@@ -65,17 +65,45 @@ body {
 
 p {
   font-family: var(--contentFont);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--headerFont);
+  font-size: 20px;
   color: var(--indigo-dye);
 }
+
+h1 {
+  font-family: var(--headerFont);
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--indigo-dye);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+h2 {
+  font-family: var(--mainFont);
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--gunmetal);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+h3 {
+  font-family: var(--contentFont);
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: var(--indigo-dye);
+}
+
+
+h4 {
+  font-family: var(--mainFont);
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--caribbean-current);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
 
 /* NAVIGATION */
 
@@ -99,7 +127,7 @@ nav a {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 20px;
 }
 
 /* Change the color of links on hover */
@@ -194,6 +222,7 @@ nav .nav-item {
 /* MEDIA QUERIES */
 
 @media (max-width: 767px) {
+
 }
 
 @media (min-width: 767px) {
@@ -206,7 +235,7 @@ nav .nav-item {
   }
 }
 
-/* BODY */
+/* HERO ELEMENT */
 
 .hero-container {
   display: flex;
@@ -247,9 +276,18 @@ nav .nav-item {
   margin: 2rem 0 2rem 0;
 }
 
+
+
+
+
+/* DAILY LUNCH */
 .lunch-container {
   display: flex;
-  height: 80vh;
+  height: 100vh;
+}
+
+.lunch-container h2 {
+  display: none;
 }
 
 .lunch-container-left {
@@ -262,10 +300,16 @@ nav .nav-item {
 
 .lunch-container-right {
   width: 50%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.lunch-container-content {
+  padding: 4rem;
+  border: solid 3px var(--indigo-dye);
 }
 
 #divider {
@@ -289,7 +333,7 @@ nav .nav-item {
 }
 
 #food {
-  height: 90%;
+  height: 80vh;
   width: auto;
 }
 
@@ -297,10 +341,6 @@ nav .nav-item {
   text-align: left;
 }
 
-.lunch-container-content h1 {
-  margin: 0;
-  font-size: 3rem;
-}
 
 .take-away {
   display: flex;
@@ -327,6 +367,52 @@ nav .nav-item {
   margin: 1rem;
 }
 
+/* WEEKLY LUNCH */
+
+.weeklyLunch-container {
+  display: flex;
+  height: auto;
+  margin-bottom: 50px;
+}
+
+.weeklyLunch-container h1 {
+  margin-bottom: -80px;
+}
+
+.weeklyLunch-left {
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.weeklyLunch-left img {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  margin-right: 20px;
+}
+
+.weeklyLunch-right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  margin-top: 100px;
+  overflow: hidden;
+}
+
+.weeklyLunch-right h2{
+  width: 50%;
+  border-top: #19415aff 3px solid;
+  padding-top: 80px;
+}
+
+.menu-card h4 {
+  /* margin: 10px 0 30px 0; */
+}
 /* FOOTER */
 
 .footer-container {
@@ -374,6 +460,7 @@ nav .nav-item {
   align-items: center;
   font-size: 14px;
   font-family: var(--contentFont);
+  border: var(--indigo-dye) 3px solid;
 }
 
 .arrow-button > .arrow {
@@ -383,7 +470,7 @@ nav .nav-item {
   border-bottom: 2px solid #19415aff;
   position: relative;
   transform: rotate(-45deg);
-  margin: 0 6px;
+  margin: 0, 6px;
   transition: all 0.3s ease;
 }
 

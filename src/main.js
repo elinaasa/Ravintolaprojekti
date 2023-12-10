@@ -61,11 +61,11 @@ function getWeekNumber(date) {
     var pastDaysOfYear = (date.getTime() - firstDayOfYear.getTime()) / 86400000;
     return Math.ceil((pastDaysOfYear + firstDayOfYear.getDay() + 1) / 7);
 }
-console.log(getWeekNumber(new Date()));
 function getWeekDay(date) {
-    return date.getDay();
+    // return date.getDay();
+    var maanantai = new Date('December 4, 2023 00:00:00');
+    return maanantai.getDay();
 }
-console.log(getWeekNumber(new Date()));
 function getWeekDayName(day) {
     var days = [
         "Maanantai",
@@ -78,14 +78,11 @@ function getWeekDayName(day) {
     ];
     return days[day];
 }
-console.log(getWeekDayName(0));
 var displayMenu = function (weekday, weeknumber, container) { return __awaiter(_this, void 0, void 0, function () {
     var menuData, menuContainer, filteredMenu, day;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0:
-                console.log("displayMenu");
-                return [4 /*yield*/, getMenuData()];
+            case 0: return [4 /*yield*/, getMenuData()];
             case 1:
                 menuData = _a.sent();
                 menuContainer = container;
@@ -93,24 +90,23 @@ var displayMenu = function (weekday, weeknumber, container) { return __awaiter(_
                     return menu.day_of_week === weekday &&
                         menu.week_number === weeknumber;
                 });
-                day = document.createElement("h3");
+                day = document.createElement("h2");
                 day.innerText = getWeekDayName(filteredMenu[0].day_of_week - 1);
                 if (menuContainer) {
                     menuContainer.appendChild(day);
                 }
-                console.log(menuData);
                 filteredMenu.forEach(function (menu) {
                     var menuCard = document.createElement("div");
                     menuCard.classList.add("menu-card");
-                    var h3 = document.createElement("h3");
-                    h3.innerHTML = menu.name;
-                    var p1 = document.createElement("p");
-                    p1.innerHTML = menu.description;
-                    var p2 = document.createElement("p");
-                    p2.innerHTML = menu.diet;
-                    menuCard.appendChild(h3);
-                    menuCard.appendChild(p1);
-                    menuCard.appendChild(p2);
+                    var name = document.createElement("h3");
+                    name.innerHTML = menu.name;
+                    var desc = document.createElement("p");
+                    desc.innerHTML = menu.description;
+                    var diet = document.createElement("h4");
+                    diet.innerHTML = menu.diet;
+                    menuCard.appendChild(name);
+                    menuCard.appendChild(desc);
+                    menuCard.appendChild(diet);
                     if (menuContainer) {
                         menuContainer.appendChild(menuCard);
                     }
@@ -124,5 +120,5 @@ var currentDayOfWeek = getWeekDay(currentDate);
 var currentWeekNumber = getWeekNumber(currentDate);
 displayMenu(currentDayOfWeek, currentWeekNumber, document.querySelector(".menu-container"));
 for (var i = 1; i < 8; i++) {
-    displayMenu(i, currentWeekNumber, document.querySelector(".weeklyLunch-container"));
+    displayMenu(i, currentWeekNumber, document.querySelector(".weeklyLunch-right"));
 }

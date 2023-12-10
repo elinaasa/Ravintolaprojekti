@@ -5,41 +5,63 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GreenFusion Bistro - Lounas</title>
-    <link rel="stylesheet" href="./Public/Style/login.css" />
-    <link rel="stylesheet" href="./Public/Style/lunch.css" />
-    <link rel="stylesheet" href="./Public/Style/main.css" />
-    <link rel="stylesheet" href="./Public/Style/slideshow.css" />
+    <link rel="stylesheet" href="Public/Style/login.css" />
+    <link rel="stylesheet" href="Public/Style/main.css" />
+    <link rel="stylesheet" href="Public/Style/lunch.css" />
+
+    <script src="./src/hamburger.js"></script>
     <script src="./src/login.js" defer></script>
-    <script src="./src/types.ts" defer></script>
     <script src="./src/main.js" defer></script>
-    <script src="./src/components.js" defer></script>
-    <script defer src="./src/slideshow.js"></script>
   </head>
   <body>
     <header>
-      <div class="topnav">
-        <a class="logo" href="./index.html">Ravintola</a>
+      <nav>
+        <a class="logo" href="./index.html">GreenFusion Bistro</a>
         <a class="nav-item" href="./lunch.html">Ruokalista</a>
-        <a class="nav-item" href="./order.html">Tilaus</a>
-        <a class="nav-item" href="./index.html#footer">Yhteystiedot</a>
+        <a class="nav-item" href="./docs/order.html">Tilaus</a>
+        <a class="nav-item" href="#footer">Yhteystiedot</a>
         <!-- Placeholder for icon -->
-        <a class="nav-item" href="./shoppingcart.html"> <img src="../Public/Image/shopping-cart.png" alt="shopping cart" width="20" height="20"></a>
+        <span id="login-icon" class="material-icons-outlined">account_circle</span>
         <!-- Placeholder for icon -->
-        <a id="login-icon" class="nav-item" href="#"> <img src="../Public/Image/login.png" alt="login" width="25" height="20"></a>
-      </div>
+        <span class="material-icons-outlined">shopping_cart</span>
+    </nav>
+    </div>
+    <button class="hamburger">
+      <div class="bar"></div>
+    </button>
+    <div class="mobile-nav">
+      <a href="./lunch.html">Ruokalista</a>
+      <a href="./docs/order.html">Tilaus</a>
+      <a href="#footer">Yhteystiedot</a>
+      <a href="./docs/login.html">Kirjaudu</a>
+      <a href="./docs/signup.html">Rekisteröidy</a>
+    </div>
+  </header>
     </header>
     <main>
     <section>
-    <div class="menu-container">
-      <div class="lunch-container-left">
-        <div class="slideshow-container">
+      <div class="lunch-container">
+        <div class="lunch-container-left">
+          <img id="food" src="./Public/Image/food.png" alt="" />
+        </div>
+        <div class="lunch-container-right">
+          <div class="lunch-container-content">
+          <h1 id="lunch-header">Päivän lounas / 12€</h1>
+          <div class="menu-container"></div>
+          <button class="arrow-button" onclick="location.href='./order.html'">MAKSA LOUNAS ETUKÄTEEN<span class="arrow"></span></button>
+
+        </div>
+        </div>
+      </div>
+        <!-- <div class="slideshow-container">
             <div class="slides fade">
               <img src="./Public/Image/food-2.png" />
             </div>
@@ -48,7 +70,7 @@
             </div>
             <div class="slides fade">
               <img src="./Public/Image/food-and-restaurant-2.png" />
-            </div>
+            </div> -->
             <div style="text-align: center; margin: -5vh">
               <span class="dot"></span>
               <span class="dot"></span>
@@ -56,23 +78,20 @@
             </div>
           </div>
       </div>
-      <div id="menu-container"></div>
-      <div class="lunch-container-right">
-        <div class="lunch-container-content">
-
-        </div>
-        <button class="arrow-button" onclick="location.href='./order.html'">MAKSA LOUNAS ETUKÄTEEN<span class="arrow"></span></button>
-
-      </div>
     </div>
-    <h1 class="weeklyLunch-title">Viikon lounas</h1>
-    <div class="weeklyLunch-container" id="weeklyLunch"></div>
-        <div class="weeklyLunch-container-left">
-          <div class="weeklyLunch-container-content">
-        <div class="weeklyLunch-container-right">
-          <img src="./Public/Image/food-and-restaurant.png" alt="" />
-        </div>
-      </div>
+
+    <!-- Weekly menu container-->
+<div class="weeklyLunch-container">
+    <div class="weeklyLunch-left">
+      <img src="./Public/Image/food-and-restaurant.png" alt="Kuva ravintolasta ja ruoka-annoksesta">
+    </div>
+  <div class="weeklyLunch-right">
+      <h1 class="weeklyLunch-title">Viikon lounas</h1>
+      <div class="weeklyLunch-container" id="weeklyLunch"></div>
+    </div>
+</div>
+
+    <!-- Weekly menu container-->
   </body>
 </section>
 </main>
