@@ -22,7 +22,7 @@ app.use(logger);
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
-app.use('/docs', express.static(path.join(__dirname, '../docs')));
+app.use('/docs', express.static(path.join(__dirname, './docs')));
 
 app.get('/', (req, res) => {
   const values = {
