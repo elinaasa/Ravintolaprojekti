@@ -64,34 +64,3 @@ document
       alert('Login failed');
     }
   });
-
-// REGISTRATION
-document
-  .querySelector('#signup-form')
-  .addEventListener('submit', async function (event) {
-    event.preventDefault();
-    const newUsername = document.getElementById('new-username').value;
-    const newPassword = document.getElementById('new-password').value;
-    const registrationData = {username: newUsername, password: newPassword};
-
-    try {
-      const response = await fetch('http://localhost:3000/api/auth/register', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(registrationData),
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        alert('Registration successful. Please login.');
-        loginBtn.click();
-      } else {
-        alert(`Registration failed: ${data.message}`);
-      }
-    } catch (error) {
-      console.error('Error during registration:', error);
-    }
-  });
