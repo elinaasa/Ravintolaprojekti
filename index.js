@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
     title: 'REST API media',
     message: 'Media items gonna be here',
   };
-  res.render('home', values);
+  res.send(values);
 });
 
 // app.get('/success-page', authenticateToken, (req, res) => {
