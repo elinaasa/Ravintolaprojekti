@@ -139,10 +139,7 @@ var getMenuData = function () {
       switch (_a.label) {
         case 0:
           _a.trys.push([0, 3, , 4]);
-          return [
-            4 /*yield*/,
-            fetch('https://ucad.northeurope.cloudapp.azure.com/api/menu'),
-          ];
+          return [4 /*yield*/, fetch('http://localhost:3000/api/menu')];
         case 1:
           response = _a.sent();
           return [4 /*yield*/, response.json()];
@@ -173,18 +170,14 @@ var updateMenuData = function (data) {
           }
           return [
             4 /*yield*/,
-            fetch(
-              'https://ucad.northeurope.cloudapp.azure.com/api/menu/' +
-                data.menu_id,
-              {
-                method: 'PUT',
-                headers: {
-                  Authorization: 'Bearer ' + token,
-                  'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data),
-              }
-            ),
+            fetch('http://localhost:3000/api/menu/' + data.menu_id, {
+              method: 'PUT',
+              headers: {
+                Authorization: 'Bearer ' + token,
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(data),
+            }),
           ];
         case 1:
           response = _a.sent();
