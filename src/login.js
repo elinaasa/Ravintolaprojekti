@@ -44,7 +44,7 @@ document
     const password = document.getElementById('password').value;
     const loginData = {username, password};
     const response = await fetch(
-      'https://ucad.northeurope.cloudapp.azure.com//api/auth/login',
+      'https://ucad.northeurope.cloudapp.azure.com/api/auth/login',
       {
         method: 'POST',
         headers: {
@@ -59,7 +59,7 @@ document
       localStorage.setItem('token', data.token);
       localStorage.setItem('user', JSON.stringify(data.user));
       window.location.href =
-        'https://ucad.northeurope.cloudapp.azure.com//admin.html';
+        'https://ucad.northeurope.cloudapp.azure.com/admin.html';
     } else {
       alert('Login failed');
     }
