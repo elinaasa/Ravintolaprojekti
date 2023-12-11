@@ -23,14 +23,19 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use('/docs', express.static(path.join(__dirname, './docs')));
+app.use(express.static(__dirname));
 
 app.get('/', (req, res) => {
-  const values = {
-    title: 'REST API media',
-    message: 'Media items gonna be here',
-  };
-  res.send(values);
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
+
+//app.get('/', (req, res) => {
+//  const values = {
+//    title: 'REST API media',
+//    message: 'Media items gonna be here',
+//  };
+//  res.send(values);
+//});
 
 // app.get('/success-page', authenticateToken, (req, res) => {
 //   res.sendFile(path.join(__dirname, '../docs/success-page.html'));
