@@ -26,9 +26,7 @@ function getWeekNumber(date: Date): number {
 }
 
 function getWeekDay(date: Date): number {
-  // return date.getDay();
-  const maanantai = new Date('December 4, 2023 00:00:00')
-  return maanantai.getDay();
+  return date.getDay();
 }
 
 function getWeekDayName(day: number): string {

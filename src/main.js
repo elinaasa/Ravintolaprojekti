@@ -62,9 +62,7 @@ function getWeekNumber(date) {
     return Math.ceil((pastDaysOfYear + firstDayOfYear.getDay() + 1) / 7);
 }
 function getWeekDay(date) {
-    // return date.getDay();
-    var maanantai = new Date('December 4, 2023 00:00:00');
-    return maanantai.getDay();
+    return date.getDay();
 }
 function getWeekDayName(day) {
     var days = [

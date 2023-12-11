@@ -18,7 +18,6 @@ CREATE TABLE Users (
   password VARCHAR(255) NOT NULL,
   email VARCHAR(255) NOT NULL UNIQUE,
   user_level_id INT NOT NULL,
-  created_at TIMESTAMP NOT NULL,
   FOREIGN KEY (user_level_id) REFERENCES UserLevels(user_level_id)
 );
 

@@ -4,7 +4,7 @@
 POST http://localhost:3000/api/auth/login
 Content-Type: application/json
 
-{"username": "hash", "password": "salasana"}
+{"username": "testitoimi", "password": "testisalasana"}
 
 ### GET my user info
 GET http://127.0.0.1:3000/api/auth/me
