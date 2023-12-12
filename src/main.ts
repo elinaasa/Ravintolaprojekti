@@ -97,5 +97,3 @@ for (let i = 1; i < 8; i++) {
     displayMenu(i, currentWeekNumber, document.querySelector(".weeklyLunch-right"));
 }
 
-
-
