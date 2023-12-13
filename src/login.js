@@ -44,7 +44,7 @@ document
     const password = document.getElementById('password').value;
     const loginData = {username, password};
     const response = await fetch(
-      'https://ucad.northeurope.cloudapp.azure.com/api/auth/login',
+      'https://ucad.northeurope.cloudapp.azure.com/api/api/auth/login',
       {
         method: 'POST',
         headers: {
