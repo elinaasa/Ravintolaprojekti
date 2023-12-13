@@ -11,7 +11,7 @@ document
 
     try {
       const response = await fetch(
-        'https://ucad.northeurope.cloudapp.azure.com/api/users',
+        'https://ucad.northeurope.cloudapp.azure.com/api/api/users',
         {
           method: 'POST',
           headers: {
