@@ -10,13 +10,16 @@ document
     const registerData = {username, email, password};
 
     try {
-      const response = await fetch('http://localhost:3000/api/user', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(registerData),
-      });
+      const response = await fetch(
+        'https://ucad.northeurope.cloudapp.azure.com/api/user',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(registerData),
+        }
+      );
 
       if (response.ok) {
         const userData = await response.json();
