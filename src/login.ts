@@ -67,7 +67,7 @@ if (modalWrapper) {
       const password = passwordInput.value;
       const loginData = { username, password };
 
-      const response = await fetch("http://localhost:3000/api/auth/login", {
+      const response = await fetch("https://ucad.northeurope.cloudapp.azure.com/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -81,7 +81,7 @@ if (modalWrapper) {
       if (data.token) {
         localStorage.setItem("token", data.token);
         localStorage.setItem("user", JSON.stringify(data.user));
-        window.location.href = "http://127.0.0.1:5501/Frontend/admin.html";
+        window.location.href = "https://ucad.northeurope.cloudapp.azure.com/admin.html";
       } else {
         alert("Login failed");
       }

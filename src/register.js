@@ -28,7 +28,8 @@ document
         localStorage.setItem('token', token);
         localStorage.setItem('user', JSON.stringify(userData.user));
 
-        window.location.href = 'http://127.0.0.1:5501/admin.html';
+        window.location.href =
+          'https://ucad.northeurope.cloudapp.azure.com/admin.html';
       } else {
         const errorData = await response.json();
         alert(`Registration failed: ${errorData.message}`);
