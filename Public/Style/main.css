@@ -516,3 +516,9 @@ nav .nav-item {
   background-color: var(--platinum);
   color: var(--indigo-dye);
 }
+
+iframe {
+  width: 80%;
+  height: 80%;
+  border: none;
+}
