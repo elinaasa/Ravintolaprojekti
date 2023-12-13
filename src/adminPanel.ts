@@ -9,7 +9,7 @@ interface Menu {
 
 const getMenuData = async (): Promise<Menu[]> => {
   try {
-    const response = await fetch("http://localhost:3000/api/menu");
+    const response = await fetch("https://ucad.northeurope.cloudapp.azure.com/api/api/menu");
     const data = await response.json();
     return data;
   } catch (error) {
@@ -25,7 +25,7 @@ const updateMenuData = async (data: Menu): Promise<Menu | null> => {
       alert("You must be logged in to update menu data");
       return null;
     }
-    const response = await fetch("http://localhost:3000/api/menu/" + data.menu_id, {
+    const response = await fetch("https://ucad.northeurope.cloudapp.azure.com/api/api/menu/" + data.menu_id, {
       method: "PUT",
       headers: {
         Authorization: "Bearer " + token,
