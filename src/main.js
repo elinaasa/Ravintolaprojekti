@@ -141,7 +141,7 @@ var getMenuData = function () {
           _a.trys.push([0, 3, , 4]);
           return [
             4 /*yield*/,
-            fetch('https://ucad.northeurope.cloudapp.azure.com/api/menu'),
+            fetch('https://ucad.northeurope.cloudapp.azure.com/api/api/menu'),
           ];
         case 1:
           response = _a.sent();
