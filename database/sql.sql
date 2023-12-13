@@ -30,19 +30,6 @@ CREATE TABLE Menus (
   day_of_week INT
 );
 
-
--- Mock data for UserLevels table
-INSERT INTO UserLevels (level_name) VALUES
-( 'Admin'),
-( 'Regular'),
-( 'Guest');
-
--- Mock data for Users table
-INSERT INTO Users (username, fname, lname, password, email, user_level_id, created_at) VALUES
-('Pekka', 'Pekka', 'Hamalainen', 'password123', 'pekka@example.com', 2, NOW()),
-('Maija', 'Maija', 'Virtanen', 'securepass', 'maija@example.com', 3, NOW()),
-('Juha', 'Juha', 'Koivisto', 'pass123', 'juha@example.com', 2, NOW());
-
 -- Insert menu items for 4 weeks
 
 INSERT INTO Menus (name, description, diet, week_number, day_of_week) VALUES
