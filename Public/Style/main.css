@@ -188,10 +188,12 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
   transition: transform 0.2s;
   padding: 1rem;
   z-index: 98;
+  margin: 0;
+  position: fixed;
+  top: 0;
 }
 
 /* Style the links inside the navigation bar */
@@ -470,9 +472,7 @@ nav .logo {
 
 .weeklyLunch-left img {
   width: 100%;
-  max-width: 700px;
   height: auto;
-  margin-right: 20px;
 }
 
 .weeklyLunch-right {

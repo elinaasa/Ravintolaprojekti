@@ -1,5 +1,4 @@
 .slides {
-  display: none;
   height: auto;
   width: 80%;
 }
@@ -14,12 +13,12 @@
   -webkit-animation-duration: 3.5s;
   animation-name: fade;
   animation-duration: 10s;
-  transition: 2s ease;
+  transition: 3s ease;
 }
 
 @-webkit-keyframes fade {
   from {
-    opacity: 0.4;
+    opacity: 0.6;
   }
 
   to {
@@ -29,7 +28,7 @@
 
 @keyframes fade {
   from {
-    opacity: 0.4;
+    opacity: 0.6;
   }
 
   to {

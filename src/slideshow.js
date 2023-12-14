@@ -14,7 +14,7 @@ function autoSlides() {
 }
 
 function prevSlide() {
-  timeOut = 2000;
+  timeOut = 1000;
 
   var slides = document.getElementsByClassName("slides");
   var dots = document.getElementsByClassName("dot");
@@ -36,7 +36,7 @@ function prevSlide() {
 }
 
 function showSlides() {
-  timeOut = 10000;
+  timeOut = 3000;
 
   const slides = document.getElementsByClassName("slides");
   const dots = document.getElementsByClassName("dot");

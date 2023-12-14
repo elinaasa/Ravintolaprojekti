@@ -38,6 +38,7 @@
   align-items: center;
   margin-top: 2px;
 }
+
 .material-icons-outlined {
  padding: 0 10px;
 }
@@ -225,6 +226,7 @@
 
 .quantity{
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
@@ -273,5 +275,6 @@ body.show-cart .container{
   .cart-tab .list-cart .item{
     grid-template-columns: 1fr 1fr;
   }
+
 
 }

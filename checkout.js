@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (carts.length > 0) {
       carts.forEach((cart) => {
         let newCart = document.createElement("div");
-        newCart.classList.add("item");
+        newCart.classList.add("cartitem");
         newCart.dataset.id = cart.product_id;
 
         let info = cart.product_id;
@@ -35,9 +35,9 @@ document.addEventListener("DOMContentLoaded", function () {
           const productName = cart.productName;
 
           newCart.innerHTML = `
-            <div class="name">${productName}</div>
+            <h3 class="name">${productName}</h3>
             <div class="total-price">${productTotal}€</div>
-            <div class="quantity">${cart.quantity}</div>
+            <div class="quantity">${cart.quantity} kpl</div>
           `;
           listCartHTML.appendChild(newCart);
         } else {
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
 
-    totalAmountHTML.innerText = `Total: ${totalAmount}€`;
+    totalAmountHTML.innerText = `Yhteensä: ${totalAmount}€`;
   };
 
   checkoutBtn.addEventListener("click", () => {

@@ -1,0 +1,91 @@
+:root {
+  --gunmetal: rgb(25, 46, 46);
+  --indigo-dye: #19415aff;
+  --dim-gray: #746b69ff;
+  --cadet-gray: #85919cff;
+  --caribbean-current: #3e666aff;
+  --jasmine: #f5db6dff;
+  --platinum: #d1dcdeff;
+  --platinum-2: #e2e2e4ff;
+  --white: rgb(236, 236, 236);
+}
+
+:root {
+  --mainFont: "Roboto", sans-serif;
+  --headerFont: "League Spartan", sans-serif;
+  --contentFont: "Open Sans", sans-serif;
+}
+
+.checkoutContainer{
+  display: flex;
+  flex-direction: column;
+  margin: 7rem 0 0 3rem;
+  border: var(--indigo-dye) 1px solid;
+  width: 60%;
+  padding: 3rem;
+}
+
+.checkoutContainer h1{
+  font-size: 2.5rem;
+  color: var(--gunmetal);
+  font-family: var(--headerFont);
+  padding: 1rem;
+}
+
+.list-cart .cartitem{
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 10px;
+  text-align: center;
+  align-items: center;
+  font-family: var(--headerFont);
+  font-size: 20px;
+  padding: 1rem 0 1rem 0;
+  color: var(--gunmetal);
+  border-radius: 10px;
+}
+
+.list-cart .cartitem .name{
+ text-align: left;
+}
+
+.list-cart .cartitem .total-price {
+  font-family: var(--headerFont);
+  font-size: 1.5rem;
+  color: var(--gunmetal);
+}
+
+.list-cart .cartitem .quantity{
+  font-size: 1.5rem;
+}
+
+.total-amount{
+  font-family: var(--headerFont);
+  font-size: 2rem;
+  margin-top: 2rem;
+
+}
+
+.checkout-btn{
+  width: 200px;
+  margin: 2rem 0 0 0 ;
+  color: #19415aff;
+  background-color: #e2e2e4ff;
+  padding: 10px 16px;
+  transition: all 0.3s ease;
+  align-items: center;
+  font-size: 14px;
+  font-family: var(--contentFont);
+  border: var(--indigo-dye) 3px solid;
+  font-size: 1.5rem;
+  text-decoration: none;
+  border-radius: 10px;
+
+}
+
+.checkout-btn:hover{
+  background-color: var(--indigo-dye);
+  color: var(--white);
+}
+
+
