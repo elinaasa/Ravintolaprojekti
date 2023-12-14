@@ -18,31 +18,17 @@ CREATE TABLE Users (
   password VARCHAR(255) NOT NULL,
   email VARCHAR(255) NOT NULL UNIQUE,
   user_level_id INT NOT NULL,
-  created_at TIMESTAMP NOT NULL,
   FOREIGN KEY (user_level_id) REFERENCES UserLevels(user_level_id)
 );
 
 CREATE TABLE Menus (
-  id INT AUTO_INCREMENT PRIMARY KEY,
+  menu_id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
   description TEXT,
   diet VARCHAR(50),
   week_number INT,
   day_of_week INT
 );
-
-
--- Mock data for UserLevels table
-INSERT INTO UserLevels (level_name) VALUES
-( 'Admin'),
-( 'Regular'),
-( 'Guest');
-
--- Mock data for Users table
-INSERT INTO Users (username, fname, lname, password, email, user_level_id, created_at) VALUES
-('Pekka', 'Pekka', 'Hamalainen', 'password123', 'pekka@example.com', 2, NOW()),
-('Maija', 'Maija', 'Virtanen', 'securepass', 'maija@example.com', 3, NOW()),
-('Juha', 'Juha', 'Koivisto', 'pass123', 'juha@example.com', 2, NOW());
 
 -- Insert menu items for 4 weeks
 

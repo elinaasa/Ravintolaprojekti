@@ -109,13 +109,11 @@ const addCartToHTML = () => {
       let newCart = document.createElement('div');
       newCart.classList.add('item');
       newCart.dataset.id = cart.product_id;
-      let positionProduct = listProducts.findIndex((value) => value.id == cart.product_id);
-      let info = listProducts[positionProduct];
 
       newCart.innerHTML = `
-      <div class="name">${info.name}</div>
+      <div class="name">${cart.productName}</div>
       <div class="total-price">
-        ${info.price * cart.quantity}€
+        ${12 * cart.quantity}€
       </div>
       <div class="quantity">
         <span class="material-icons minus">remove_circle</span>
@@ -164,18 +162,22 @@ const changeQuantity = (product_id, type) => {
 }
 
 const initApp = () => {
-  fetch('http://localhost:3000/api/menu')
+  fetch('https://ucad.northeurope.cloudapp.azure.com/api/api/menu')
   .then(response => response.json())
   .then(data => {
+    data.forEach(product => {
+      let id = product.menu_id;
+      product.id = id;
+    })
     listProducts = data;
     const currentWeekNumber = getWeekNumber(currentDate);
     addDatatoHTML(currentDayOfWeek, currentWeekNumber);
+
 
     // Get cart from memory
     if(localStorage.getItem('cart')) {
       carts = JSON.parse(localStorage.getItem('cart'));
       addCartToHTML();
-      console.log(carts);
     }
   })
 }
@@ -183,3 +185,4 @@ const initApp = () => {
 initApp();
 
 });
+
