@@ -77,9 +77,11 @@ listProductsHTML.addEventListener('click', (event) => {
 
 
 const addToCart = (product_id) => {
-  let positionInCart = carts.findIndex((value) => value.product_id === product_id);
+  let positionInCart = carts.findIndex((value) => value.product_id == product_id);
+  let info = listProducts.find((value) => value.id == product_id);
   if(positionInCart < 0){
     carts.push({
+      productName: info.name,
       product_id: product_id,
       quantity: 1
     });
