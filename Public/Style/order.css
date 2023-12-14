@@ -1,14 +1,27 @@
+:root {
+  --gunmetal: rgb(25, 46, 46);
+  --indigo-dye: #19415aff;
+  --dim-gray: #746b69ff;
+  --cadet-gray: #85919cff;
+  --caribbean-current: #3e666aff;
+  --jasmine: #f5db6dff;
+  --platinum: #d1dcdeff;
+  --platinum-2: #e2e2e4ff;
+  --white: #fefefeff;
+}
+
+:root {
+  --mainFont: "Roboto", sans-serif;
+  --headerFont: "League Spartan", sans-serif;
+  --contentFont: "Open Sans", sans-serif;
+}
+
 *{
   margin: 0;
   padding: 0;
 }
 
 .container{
-  width: 900px;
-  max-width: 90vw;
-  margin: auto;
-  text-align: center;
-  padding-top: 10px;
   transition: transform .5s;
 }
 
@@ -23,7 +36,6 @@ header .icon-cart {
   position: relative;
   cursor: pointer;
 }
-
 
 header .icon-cart .cart-count {
   display: flex;

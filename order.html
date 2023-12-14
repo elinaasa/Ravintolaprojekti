@@ -15,17 +15,98 @@
     <title>GreenFusion Bistro - Etusivu</title>
     <link rel="stylesheet" href="Public/Style/login.css" />
     <link rel="stylesheet" href="Public/Style/order.css" />
+    <link rel="stylesheet" href="Public/Style/main.css" />
     <script src="./src/hamburger.js"></script>
     <script src="./src/login.js" defer></script>
   </head>
   <body>
     <header>
-      <div class="container">
-        <div class="title">Product list</div>
+        <nav>
+          <a class="logo" href="./index.html">GreenFusion Bistro</a>
+          <a class="nav-item" href="./lunch.html">Ruokalista</a>
+          <a class="nav-item" href="./order.html">Tilaus</a>
+          <a class="nav-item" href="#footer">Yhteystiedot</a>
+          <!-- Placeholder for icon -->
+          <span id="login-icon" class="material-icons-outlined">account_circle</span>
+          <!-- Placeholder for icon -->
           <div class="icon-cart">
             <span class="material-icons-outlined shopping_cart">shopping_cart</span>
             <span class="cart-count">0</span>
           </div>
+          <div>
+            <input type="checkbox" class="checkbox" id="checkbox" />
+            <label for="checkbox" class="checkbox-label">
+              <i class="fas fa-moon"></i>
+              <i class="fas fa-sun"></i>
+              <span class="ball"></span>
+            </label>
+          </div>
+      </nav>
+      </div>
+      <button class="hamburger is-active">
+        <div class="bar"></div>
+      </button>
+      <div class="mobile-nav">
+        <a href="./lunch.html">Ruokalista</a>
+        <a href="./docs/order.html">Tilaus</a>
+        <a href="#footer">Yhteystiedot</a>
+        <a href="./docs/login.html">Kirjaudu</a>
+        <a href="./docs/signup.html">Rekisteröidy</a>
+      </div>
+    </header>
+
+    <!-- NAV BAR ENDS -->
+
+    <!-- LOGIN MODAL  -->
+      <div id="login-modal">
+        <div class="wrapper">
+          <span id="close-login-modal" class="close-button">X</span>
+          <div class="title-text">
+            <div class="title login">Kirjaudu sisään</div>
+            <div class="title signup">Luo tili</div>
+          </div>
+          <div class="form-container">
+            <div class="slide-controls">
+              <input type="radio" name="slide" id="login" checked>
+              <input type="radio" name="slide" id="signup">
+              <label for="login" class="slide login">Kirjaudu</label>
+              <label for="signup" class="slide signup">Luo tili</label>
+              <div class="slider-tab"></div>
+            </div>
+            <div class="form-inner">
+              <form id="login-form" action="https://localhost:3000/api/auth/login" method="post" class="login">
+                <div class="field">
+                  <input type="text" name="username" id="username" placeholder="Käyttäjänimi" required>
+                </div>
+                <div class="field">
+                  <input type="password" name="password" id="password" placeholder="Salasana" required>
+                </div>
+                <div class="field btn">
+                  <div class="btn-layer"></div>
+                  <input type="submit" value="Kirjaudu">
+                </div>
+                <div class="signup-link">Etkö ole vielä jäsen? <a href="">Luo tili</a></div>
+              </form>
+              <form id="register-form">
+                <div class="field">
+                  <input type="text" name="register-username" id="register-username" placeholder="Käyttäjänimi" required>
+                </div>
+                <div class="field">
+                  <input type="email" name="register-email" id="register-email" placeholder="Sähköposti" required>
+                </div>
+                <div class="field">
+                  <input type="password" name="register-password" id="register-password" placeholder="Salasana" required>
+                </div>
+                <div class="field btn">
+                  <div class="btn-layer"></div>
+                  <input type="submit" value="Rekisteröidy">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+        <div class="title">Product list</div>
       </div>
     </header>
         <div class="list-products">
