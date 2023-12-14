@@ -49,7 +49,6 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   checkoutBtn.addEventListener("click", () => {
-    alert("moi");
   });
   displayCart();
 });
