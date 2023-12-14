@@ -7,7 +7,7 @@
   --jasmine: #f5db6dff;
   --platinum: #d1dcdeff;
   --platinum-2: #e2e2e4ff;
-  --white: #fefefeff;
+  --white: rgb(236, 236, 236);
 }
 
 :root {
@@ -63,11 +63,8 @@ body.dark h1, body.dark h2, body.dark h3, body.dark h4, body.dark p {
   height: 26px;
   border-radius: 50px;
   position: relative;
-  padding: 5px;
   cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  margin-right: 20px;
 }
 
 .fa-moon {
@@ -190,9 +187,11 @@ nav {
   font-family: var(--headerFont);
   display: flex;
   justify-content: center;
-  align-items: baseline;
+  align-items: center;
   position: fixed;
   transition: transform 0.2s;
+  padding: 1rem;
+  z-index: 98;
 }
 
 /* Style the links inside the navigation bar */
@@ -201,9 +200,16 @@ nav a {
   font: var(--headerFont);
   color: var(--gunmetal);
   text-align: center;
-  padding: 14px 16px;
+  padding: 0 10px 0 10px;
   text-decoration: none;
   font-size: 20px;
+  font-weight: 500;
+}
+
+nav a.icon-cart{
+  display: flex;
+  align-items: center;
+  margin-top: 2px;
 }
 
 /* Change the color of links on hover */
@@ -218,10 +224,6 @@ nav .logo {
   margin-right: auto;
 }
 
-nav .nav-item {
-  font-weight: 500;
-  margin-right: -4px;
-}
 
 #login-icon {
   cursor: pointer;
@@ -419,11 +421,14 @@ nav .nav-item {
 
 
 .take-away {
+  margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 50vh;
+  width: 60%;
+  border: var(--indigo-dye) 3px solid;
 }
 
 .take-away-content {
@@ -436,7 +441,7 @@ nav .nav-item {
 
 .take-away p {
   margin: 0.3rem;
-  width: 80%;
+  padding: 1rem;
 }
 
 .take-away button {
@@ -597,4 +602,52 @@ iframe {
   width: 80%;
   height: 80%;
   border: none;
+}
+
+.kiitosContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.kiitosContainer .tilausnro{
+  font-family: var(--headerFont);
+  font-size: 2rem;
+  margin: 0.5rem;
+}
+
+.kiitosleft {
+  margin: 2rem;
+  padding: 3rem;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: var(--indigo-dye) 3px solid;
+}
+
+.kiitosright {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.kuva1 {
+  position: absolute;
+  top: 15%;
+  left: 55%;
+  height: 50%;
+}
+
+.kuva2 {
+  position: absolute;
+  top: 40%;
+  left: 70%;
+  height: 50%;
 }

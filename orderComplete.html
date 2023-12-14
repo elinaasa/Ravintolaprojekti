@@ -1,16 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script defer src="./tilausnro.js"></script>
-  <title>Kiitos tilauksesta</title>
-</head>
+  <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GreenFusion Bistro - Kiitos tilauksesta</title>
+    <link rel="stylesheet" href="Public/Style/login.css" />
+    <link rel="stylesheet" href="Public/Style/order.css" />
+    <link rel="stylesheet" href="Public/Style/main.css" />
+    <script src="./src/hamburger.js"></script>
+    <script src="./src/login.js" defer></script>
+    <script src="./src/dark.js" defer></script>
+    <script src="./tilausnro.js" defer></script>
+  </head>
 <body>
-
-  <h1>Kiitos tilauksesta</h1>
-  <p>Voit noutaa tilauksen oheisella tilausnumerolla:</p>
-  <div class="tilausnro"></div>
+  <header>
+    <nav>
+      <a class="logo" href="./index.html">GreenFusion Bistro</a>
+        <input type="checkbox" class="checkbox" id="checkbox" />
+        <label for="checkbox" class="checkbox-label">
+          <i class="fas fa-moon"></i>
+          <i class="fas fa-sun"></i>
+          <span class="ball"></span>
+        </label>
+      <a class="nav-item" href="./lunch.html">Ruokalista</a>
+      <a class="nav-item" href="./order.html">Tilaus</a>
+      <a class="nav-item" href="#footer">Yhteystiedot</a>
+      <!-- Placeholder for icon -->
+      <span id="login-icon" class="material-icons-outlined">account_circle</span>
+      <!-- Placeholder for icon -->
+      <div class="icon-cart">
+        <span class="material-icons-outlined shopping_cart">shopping_cart</span>
+        <span class="cart-count">0</span>
+      </div>
+  </nav>
+  </header>
+  <div class="kiitosContainer">
+    <div class="kiitosleft">
+      <h1>Kiitos tilauksesta!</h1>
+      <p>Voit noutaa tilauksen oheisella tilausnumerolla:</p>
+      <div class="tilausnro"></div>
+      </div>
+      <div class="kiitosright">
+        <img class="kuva1" src="Public/Image/lounas9.jpg" alt="">
+        <img class="kuva2" src="Public/Image/lounas10.jpg" alt="">
+      </div>
+  </div>
 
 </body>
 </html>

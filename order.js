@@ -57,8 +57,10 @@ const addDatatoHTML = (currentDayOfWeek, currentWeekNumber) => {
         newProduct.classList.add('item');
         newProduct.dataset.id = product.id;
         newProduct.innerHTML = `
-          <h2>${product.name}</h2>
-          <button class="add-cart">Add to cart</button>
+          <h3>${product.name} - 12€</h3>
+          <p>${product.description}</p>
+          <h4>${product.diet}</h4>
+          <button class="add-cart"> + Lisää ostoskoriin</button>
         `;
         listProductsHTML.appendChild(newProduct);
       })

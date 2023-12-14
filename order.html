@@ -12,17 +12,24 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GreenFusion Bistro - Etusivu</title>
+    <title>GreenFusion Bistro - Tilaa etukäteen</title>
     <link rel="stylesheet" href="Public/Style/login.css" />
     <link rel="stylesheet" href="Public/Style/order.css" />
     <link rel="stylesheet" href="Public/Style/main.css" />
     <script src="./src/hamburger.js"></script>
     <script src="./src/login.js" defer></script>
+    <script src="./src/dark.js" defer></script>
   </head>
   <body>
     <header>
         <nav>
           <a class="logo" href="./index.html">GreenFusion Bistro</a>
+            <input type="checkbox" class="checkbox" id="checkbox" />
+            <label for="checkbox" class="checkbox-label">
+              <i class="fas fa-moon"></i>
+              <i class="fas fa-sun"></i>
+              <span class="ball"></span>
+            </label>
           <a class="nav-item" href="./lunch.html">Ruokalista</a>
           <a class="nav-item" href="./order.html">Tilaus</a>
           <a class="nav-item" href="#footer">Yhteystiedot</a>
@@ -33,26 +40,7 @@
             <span class="material-icons-outlined shopping_cart">shopping_cart</span>
             <span class="cart-count">0</span>
           </div>
-          <div>
-            <input type="checkbox" class="checkbox" id="checkbox" />
-            <label for="checkbox" class="checkbox-label">
-              <i class="fas fa-moon"></i>
-              <i class="fas fa-sun"></i>
-              <span class="ball"></span>
-            </label>
-          </div>
       </nav>
-      </div>
-      <button class="hamburger is-active">
-        <div class="bar"></div>
-      </button>
-      <div class="mobile-nav">
-        <a href="./lunch.html">Ruokalista</a>
-        <a href="./docs/order.html">Tilaus</a>
-        <a href="#footer">Yhteystiedot</a>
-        <a href="./docs/login.html">Kirjaudu</a>
-        <a href="./docs/signup.html">Rekisteröidy</a>
-      </div>
     </header>
 
     <!-- NAV BAR ENDS -->
@@ -106,13 +94,20 @@
           </div>
         </div>
       </div>
-        <div class="title">Product list</div>
-      </div>
-    </header>
+      <div class="orderContainer">
+      <div class="orderleft">
+        <h1>TILAA LOUNAS</h1>
+        <P>Voit tilata lounaan etukäteen noudettavaksi paikanpäältä. Valitse haluamasi tuotteet, niin pakkaamme ne sinulle valmiiksi ja vältät jonotuksen.</P>
         <div class="list-products">
           <div class="item">
           </div>
         </div>
+      </div>
+      <div class="orderright">
+        <img class="kuva1" src="Public/Image/lounas3.jpg" alt="">
+        <img class="kuva2" src="Public/Image/lounas4.jpg" alt="">
+      </div>
+    </div>
         <div class="cart-tab">
           <h2>Ostoskori</h2>
           <div class="list-cart">
@@ -120,8 +115,8 @@
               </div>
           </div>
           <div class="btn">
-            <a class="pay" href="/checkout.html">Pay</a>
-            <button class="close">Close</button>
+            <a class="pay button" href="/checkout.html">Maksamaan</a>
+            <button class="close">Sulje</button>
           </div>
         </div>
         <script src="./order.js" defer></script>

@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const totalAmountHTML = document.querySelector(".total-amount");
   const checkoutBtn = document.querySelector(".checkout-btn");
 
+
   let carts = [];
 
   const getCartFromMemory = () => {
