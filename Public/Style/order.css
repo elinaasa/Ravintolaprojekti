@@ -99,7 +99,6 @@
 }
 
 .list-products .item {
-  background-color: var(--white);
   margin: 1rem;
   padding: 2rem;
   border: var(--indigo-dye) 1px solid;
