@@ -223,6 +223,9 @@ nav .nav-item {
 /* MEDIA QUERIES */
 
 @media (max-width: 767px) {
+  .hero-container{
+    flex-direction: column;
+  }
 
 }
 
