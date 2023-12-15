@@ -7,7 +7,7 @@
   --jasmine: #f5db6dff;
   --platinum: #d1dcdeff;
   --platinum-2: #e2e2e4ff;
-  --white: #fefefeff;
+  --white: rgb(236, 236, 236);
 }
 
 :root {
@@ -47,14 +47,89 @@
   padding: 0;
 }
 
+/* DARK THEME */
+
+body.dark h1, body.dark h2, body.dark h3, body.dark h4, body.dark p {
+  color: var(--platinum-2);
+}
+
+
+
+.checkbox {
+  opacity: 0;
+}
+
+.checkbox-label {
+  background-color: #111;
+  width: 50px;
+  height: 26px;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.fa-moon {
+  color: #f1c40f;
+}
+
+.fa-sun {
+  color: #f39c12;
+}
+
+.checkbox-label .ball {
+  background-color: #fff;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .checkbox-label .ball {
+  transform: translateX(24px);
+}
+
+body .dark {
+  background-color: var(--gunmetal);
+  color: var(--platinum-2);
+}
+
+.dark {
+  background-color: var(--gunmetal);
+  color: var(--platinum-2);
+}
+
+.navDark {
+  background-color: var(--gunmetal);
+  color: var(--platinum-2);
+}
+
+.aDark {
+  color: var(--platinum-2);
+}
+
+.lunch-container-contentDark {
+  border: solid 3px var(--platinum-2);
+}
+
+.buttonDark {
+  background-color: var(--platinum-2);
+  color: var(--gunmetal);
+}
+
+/* DARK THEME END */
+
 #hero {
   height: 70%;
   width: auto;
 }
 
 main {
-  margin: 0;
-
+  width: 90%;
+  margin: 0 auto;
 }
 body {
   margin: 0;
@@ -114,10 +189,13 @@ nav {
   font-family: var(--headerFont);
   display: flex;
   justify-content: center;
-  align-items: baseline;
-  position: fixed;
+  align-items: center;
   transition: transform 0.2s;
-  z-index: 99;
+  padding: 1rem;
+  z-index: 98;
+  margin: 0;
+  position: fixed;
+  top: 0;
 }
 
 /* Style the links inside the navigation bar */
@@ -126,9 +204,16 @@ nav a {
   font: var(--headerFont);
   color: var(--gunmetal);
   text-align: center;
-  padding: 14px 16px;
+  padding: 0 10px 0 10px;
   text-decoration: none;
   font-size: 20px;
+  font-weight: 500;
+}
+
+nav a.icon-cart{
+  display: flex;
+  align-items: center;
+  margin-top: 2px;
 }
 
 /* Change the color of links on hover */
@@ -143,10 +228,6 @@ nav .logo {
   margin-right: auto;
 }
 
-nav .nav-item {
-  font-weight: 500;
-  margin-right: -4px;
-}
 
 #login-icon {
   cursor: pointer;
@@ -223,9 +304,6 @@ nav .nav-item {
 /* MEDIA QUERIES */
 
 @media (max-width: 767px) {
-  .hero-container{
-    flex-direction: column;
-  }
 
 }
 
@@ -268,14 +346,14 @@ nav .nav-item {
   text-align: left;
 }
 
-#lunchPlace {
+.lunchPlace {
   margin: 0;
   font-size: 4rem;
   color: var(--indigo-dye);
   padding-bottom: 10px;
 }
 
-#slogan {
+.slogan {
   color: var(--gunmetal);
   margin: 2rem 0 2rem 0;
 }
@@ -347,11 +425,14 @@ nav .nav-item {
 
 
 .take-away {
+  margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 50vh;
+  width: 60%;
+  border: var(--indigo-dye) 3px solid;
 }
 
 .take-away-content {
@@ -364,7 +445,7 @@ nav .nav-item {
 
 .take-away p {
   margin: 0.3rem;
-  width: 80%;
+  padding: 1rem;
 }
 
 .take-away button {
@@ -393,9 +474,7 @@ nav .nav-item {
 
 .weeklyLunch-left img {
   width: 100%;
-  max-width: 700px;
   height: auto;
-  margin-right: 20px;
 }
 
 .weeklyLunch-right {
@@ -521,47 +600,56 @@ nav .nav-item {
   color: var(--indigo-dye);
 }
 
-/* Add this to your main.css or a separate style file */
-.modal-container {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+iframe {
+  width: 80%;
+  height: 80%;
+  border: none;
+}
+
+.kiitosContainer {
+  display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 }
 
-/* Modal Content */
-.modal-content {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.kiitosContainer .tilausnro{
+  font-family: var(--headerFont);
+  font-size: 2rem;
+  margin: 0.5rem;
 }
 
-/* Cart Item */
-.cart-item {
-  margin-bottom: 10px;
+.kiitosleft {
+  margin: 2rem;
+  padding: 3rem;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: var(--indigo-dye) 3px solid;
 }
 
-/* Remove from Cart Button */
-.removeFromCartButton {
-  background-color: #ff5858;
-  color: #fff;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-  border-radius: 4px;
-  font-size: 14px;
+.kiitosright {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
 }
 
-.removeFromCartButton:hover {
-  background-color: #ff4040;
+.kuva1 {
+  position: absolute;
+  top: 15%;
+  left: 55%;
+  height: 50%;
 }
 
-.lunch-container-content .menu-card input button {
-  display: none;
+.kuva2 {
+  position: absolute;
+  top: 40%;
+  left: 70%;
+  height: 50%;
 }
