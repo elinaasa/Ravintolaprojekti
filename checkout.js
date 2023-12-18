@@ -36,8 +36,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
           newCart.innerHTML = `
             <h3 class="name">${productName}</h3>
-            <div class="total-price">${productTotal}€</div>
-            <div class="quantity">${cart.quantity} kpl</div>
+            <p class="total-price">${productTotal}€</p>
+            <p class="quantity">${cart.quantity} kpl</p>
           `;
           listCartHTML.appendChild(newCart);
         } else {

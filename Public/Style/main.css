@@ -140,7 +140,7 @@ body {
 
 p {
   font-family: var(--contentFont);
-  font-size: 20px;
+  font-size: 1rem;
   color: var(--indigo-dye);
 }
 
@@ -198,6 +198,10 @@ nav {
   top: 0;
 }
 
+nav .material-symbols-outlined{
+  display: none;
+}
+
 /* Style the links inside the navigation bar */
 nav a {
   float: left;
@@ -223,9 +227,18 @@ nav a:hover {
 
 /* Add a color to the active/current link */
 nav .logo {
+  margin-right: auto;
+}
+
+nav p {
+  font-family: var(--headerFont);
   font-weight: 600;
   font-size: 2rem;
-  margin-right: auto;
+  color: var(--gunmetal);
+}
+
+nav p:hover {
+  color: var(--caribbean-current);
 }
 
 
@@ -299,22 +312,6 @@ nav .logo {
 
 .mobile-nav.is-active {
   left: 0;
-}
-
-/* MEDIA QUERIES */
-
-@media (max-width: 767px) {
-
-}
-
-@media (min-width: 767px) {
-  .mobile-nav {
-    display: none;
-  }
-
-  .hamburger {
-    display: none;
-  }
 }
 
 /* HERO ELEMENT */
@@ -652,4 +649,69 @@ iframe {
   top: 40%;
   left: 70%;
   height: 50%;
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 900px) {
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav {
+    padding: 0.5rem;
+  }
+
+  nav .material-icons-outlined {
+    font-size: 20px;
+  }
+
+  nav .material-symbols-outlined{
+    display: block;
+  }
+
+  nav p {
+    display: none;
+  }
+
+  nav a{
+    font-size: 0.8rem;
+  }
+
+
+  .checkbox-label {
+    width: 30px;
+    height: 15px;
+  }
+
+  .checkbox-label .ball {
+    width: 12px;
+    height: 12px;
+    left: 1px;
+    top: 1.2px;
+  }
+
+  .hero-container {
+    flex-direction: column;
+  }
+
+  .hero-container-left {
+    width: 100%;
+    margin-top: 200px;
+  }
+
+  .hero-container-right {
+    width: 100%;
+
+  }
+  .hero-container img{
+    width: 300px;
+    height: auto;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+  }
 }

@@ -52,7 +52,6 @@
 .list-cart .cartitem .total-price {
   font-family: var(--headerFont);
   font-size: 1.5rem;
-  color: var(--gunmetal);
 }
 
 .list-cart .cartitem .quantity{
