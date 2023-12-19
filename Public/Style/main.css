@@ -124,7 +124,6 @@ body .dark {
 
 #hero {
   height: 70%;
-  width: auto;
 }
 
 main {
@@ -547,7 +546,7 @@ iframe {
 .kiitosContainer .tilausnro{
   font-family: var(--headerFont);
   font-size: 2rem;
-  margin: 0.5rem;
+  margin-top: 1rem;
 }
 
 .kiitosleft {
@@ -557,7 +556,6 @@ iframe {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   border: var(--indigo-dye) 3px solid;
 }
 
@@ -587,7 +585,7 @@ iframe {
 
 /* MEDIA QUERIES */
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 800px) {
 
   .mobile-nav {
     display: block;
@@ -617,26 +615,13 @@ iframe {
   }
 
   nav {
+    background-color: transparent;
+
+  }
+
+  nav .nav-item {
     display: none;
     padding: 0.5rem;
-  }
-
-
-  nav .material-symbols-outlined{
-    display: block;
-  }
-
-
-  .checkbox-label {
-    width: 30px;
-    height: 15px;
-  }
-
-  .checkbox-label .ball {
-    width: 12px;
-    height: 12px;
-    left: 1px;
-    top: 1.2px;
   }
 
   .hero-container {
@@ -719,6 +704,9 @@ iframe {
   .footer-container-left {
     width: 100%;
     margin-top: 50px;
+    display: flex;
+    align-items: flex-start;
+    margin-left: 4rem;
   }
 
   .footer-container-left h1 {
@@ -730,6 +718,42 @@ iframe {
     margin-top: 20px 0 0 0;
     height: 80vh;
     width: auto;
+  }
+
+  .kiitosContainer {
+    flex-direction: column;
+    height: 300px;
+  }
+
+  .kiitosleft {
+    width: 90%;
+    padding: 2rem;
+  }
+
+  .kiitosleft .tilausnro {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .kiitosright {
+    width: 100%;
+    margin-top: 20px 0 0 0;
+    width: auto;
+    height: auto;
+  }
+
+  .kiitosright .kuva1 {
+    width: 200px;
+    height: auto;
+    top: 50%;
+    left: 10%;
+  }
+
+  .kiitosright .kuva2 {
+    width: 150px;
+    height: auto;
+    top: 65%;
+    left: 50%;
   }
 
 

@@ -264,7 +264,22 @@ body.show-cart .container{
   transform: translate(-250px);
 }
 
-@media screen and (max-width: 768px) {
+
+@media screen and (max-width: 900px) {
+  .orderright {
+    display: none;
+  }
+
+  .orderleft {
+    margin: 0;
+    width: 90%;
+    flex-direction: column;
+  }
+
+}
+
+
+@media screen and (max-width: 400px) {
   .list-products {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -274,6 +289,46 @@ body.show-cart .container{
   .cart-tab .list-cart .item{
     grid-template-columns: 1fr 1fr;
   }
+
+  .icon-cart {
+    display: block;
+  }
+
+  .orderContainer {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .orderright {
+    display: none;
+  }
+
+  .orderleft {
+    margin: 0;
+    width: 90%;
+    flex-direction: column;
+  }
+
+  .orderleft h1 {
+    font-size: 2rem;
+    padding: 1rem 0 0 0;
+  }
+
+  .orderleft p {
+    font-size: 1rem;
+    padding: 1rem 0 1rem 0;
+  }
+
+  .orderleft h3 {
+    font-size: 1.3rem;
+    margin: 0;
+  }
+
+  .orderleft .item {
+    margin: 0;
+    padding: 1rem;
+  }
+
 
 
 }
