@@ -15,6 +15,7 @@
     <title>GreenFusion Bistro - Etusivu</title>
     <link rel="stylesheet" href="Public/Style/main.css" />
     <link rel="stylesheet" href="Public/Style/login.css" />
+    <link rel="stylesheet" href="Public/Style/hamburger.css" />
 
     <link rel="manifest" href="./manifest.json" />
     <meta name="theme-color" content="white" />
@@ -27,7 +28,7 @@
     <meta name="msapplication-TileImage" content="images/hello-icon-144.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
 
-    <script src="./src/hamburger.js"></script>
+
     <script src="./src/login.js" defer></script>
     <script src="./src/register.js" defer></script>
     <script src="./src/main.js" defer></script>
@@ -59,10 +60,28 @@
             <span class="material-icons-outlined shopping_cart">shopping_cart</span>
           <a>
       </nav>
-      </div>
     </header>
 
     <!-- NAV BAR ENDS -->
+    <!-- MOBILE NAV -->
+
+      <button class="hamburger">
+        <div class="bar">
+        </div>
+      </button>
+      </div>
+    <a class="logo" href="./index.html">
+      <span class="material-symbols-outlined">
+        home
+        </span></a>
+    <nav class="mobile-nav">
+      <a class="nav-item" href="./index.html">Etusivu</a>
+      <a class="nav-item" href="./lunch.html">Ruokalista</a>
+      <a class="nav-item" href="./order.html">Tilaus</a>
+      <a class="nav-item" href="#footer">Yhteystiedot</a>
+      <a class="nav-item" href="./order.html">Ostoskori</a>
+    </nav>
+
 
     <!-- LOGIN MODAL  -->
       <div id="login-modal">
@@ -155,7 +174,6 @@
         Raikkaan, päivittäin vaihtuvan take away -lounaamme voi noutaa
         mukaan arkisin klo 10.30-13.30.
         Voit <strong>tilata annoksen etukäteen</strong> verkkosivuillamme, jolloin pakkaamme sen sinulle valmiiksi ja vältät jonottamisen.</p>
-      </p>
       </div>
       <button class="arrow-button" onclick="location.href='./order.html'">TILAA LOUNAS ETUKÄTEEN<span class="arrow"></span></button></div></div>
     </main>
