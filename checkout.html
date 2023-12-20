@@ -34,35 +34,54 @@
     <link rel="stylesheet" href="Public/Style/order.css" />
     <link rel="stylesheet" href="Public/Style/main.css" />
     <link rel="stylesheet" href="Public/Style/checkout.css" />
-    <script src="./src/hamburger.js"></script>
+    <link rel="stylesheet" href="Public/Style/hamburger.css" />
+    <script src="./hamburger.js"></script>
     <script src="./src/login.js" defer></script>
     <script src="./src/dark.js" defer></script>
   </head>
   <body>
     <header>
-      <nav>
-        <a class="logo" href="./index.html">GreenFusion Bistro</a>
-        <input type="checkbox" class="checkbox" id="checkbox" />
-        <label for="checkbox" class="checkbox-label">
-          <i class="fas fa-moon"></i>
-          <i class="fas fa-sun"></i>
-          <span class="ball"></span>
-        </label>
-        <a class="nav-item" href="./lunch.html">Ruokalista</a>
-        <a class="nav-item" href="./order.html">Tilaus</a>
-        <a class="nav-item" href="./index.html#footer">Yhteystiedot</a>
-        <!-- Placeholder for icon -->
-        <span id="login-icon" class="material-icons-outlined"
-          >account_circle</span
-        >
-        <!-- Placeholder for icon -->
-        <div class="icon-cart">
-          <span class="material-icons-outlined shopping_cart"
-            >shopping_cart</span
+      <div class="container">
+      <!-- NAV BAR STARTS -->
+      <header>
+        <nav>
+          <a class="logo nav-item" href="./index.html">GreenFusion Bistro</a>
+          <input type="checkbox" class="checkbox nav-item" id="checkbox" />
+          <label for="checkbox" class="checkbox-label nav-item">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <span class="ball"></span>
+          </label>
+          <a class="nav-item" href="./lunch.html">Ruokalista</a>
+          <a class="nav-item" href="./order.html">Tilaus</a>
+          <a class="nav-item" href="./index.html#footer">Yhteystiedot</a>
+          <!-- Placeholder for icon -->
+          <span id="login-icon" class="material-icons-outlined nav-item"
+            >account_circle</span
           >
-          <span class="cart-count">0</span>
-        </div>
-      </nav>
+          <!-- Placeholder for icon -->
+          </div>
+        </nav>
+      </header>
+
+          <!-- MOBILE NAV -->
+        <a class="logo" href="./index.html">
+          <span class="material-symbols-outlined">home</span>
+        </a>
+          <button class="hamburger">
+            <div class="bar">
+            </div>
+          </button>
+
+
+        <nav class="mobile-nav">
+          <a href="./index.html">Etusivu</a>
+          <a href="./lunch.html">Ruokalista</a>
+          <a href="./order.html">Tilaus</a>
+          <a href="#footer">Yhteystiedot</a>
+          <a href="./order.html">Ostoskori</a>
+        </nav>
+      </div>
     </header>
     <div class="checkoutContainer">
       <h1 class="order-title">Ostoskori</h1>
@@ -76,6 +95,7 @@
       <a class="checkout-btn" href="orderComplete.html">Vahvista tilaus</a>
       <a class="checkout-btn" href="order.html#cart-tab">Takaisin</a>
     </div>
+    <script src="./order.js" defer></script>
     <script src="./checkout.js" defer></script>
   </body>
 </html>

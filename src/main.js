@@ -120,3 +120,14 @@ displayMenu(currentDayOfWeek, currentWeekNumber, document.querySelector(".menu-c
 for (var i = 1; i < 8; i++) {
     displayMenu(i, currentWeekNumber, document.querySelector(".weeklyLunch-right"));
 }
+
+window.onload = function () {
+  const menu_btn = document.querySelector(".hamburger");
+  const mobile_menu = document.querySelector(".mobile-nav");
+
+  menu_btn.addEventListener("click", function () {
+    menu_btn.classList.toggle("is-active");
+    mobile_menu.classList.toggle("is-active");
+  });
+};
+

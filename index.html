@@ -15,6 +15,7 @@
     <title>GreenFusion Bistro - Etusivu</title>
     <link rel="stylesheet" href="Public/Style/main.css" />
     <link rel="stylesheet" href="Public/Style/login.css" />
+    <link rel="stylesheet" href="Public/Style/hamburger.css" />
 
     <link rel="manifest" href="./manifest.json" />
     <meta name="theme-color" content="white" />
@@ -27,7 +28,7 @@
     <meta name="msapplication-TileImage" content="images/hello-icon-144.png">
     <meta name="msapplication-TileColor" content="#FFFFFF">
 
-    <script src="./src/hamburger.js"></script>
+
     <script src="./src/login.js" defer></script>
     <script src="./src/register.js" defer></script>
     <script src="./src/main.js" defer></script>
@@ -37,28 +38,47 @@
     <header>
       <div class="container">
       <!-- NAV BAR STARTS -->
+      <header>
         <nav>
-          <a class="logo" href="./index.html">GreenFusion Bistro</a>
-          <input type="checkbox" class="checkbox" id="checkbox" />
-          <label for="checkbox" class="checkbox-label">
+          <a class="logo nav-item" href="./index.html">GreenFusion Bistro</a>
+          <input type="checkbox" class="checkbox nav-item" id="checkbox" />
+          <label for="checkbox" class="checkbox-label nav-item">
             <i class="fas fa-moon"></i>
             <i class="fas fa-sun"></i>
             <span class="ball"></span>
           </label>
           <a class="nav-item" href="./lunch.html">Ruokalista</a>
           <a class="nav-item" href="./order.html">Tilaus</a>
-          <a class="nav-item" href="#footer">Yhteystiedot</a>
+          <a class="nav-item" href="./index.html#footer">Yhteystiedot</a>
           <!-- Placeholder for icon -->
-          <span id="login-icon" class="material-icons-outlined">account_circle</span>
+          <span id="login-icon" class="material-icons-outlined nav-item"
+            >account_circle</span
+          >
           <!-- Placeholder for icon -->
-          <a class="icon-cart" href="./order.html">
-            <span class="material-icons-outlined shopping_cart">shopping_cart</span>
-          <a>
-      </nav>
+          </div>
+        </nav>
+      </header>
+
+          <!-- MOBILE NAV -->
+        <a class="logo" href="./index.html">
+          <span class="material-symbols-outlined">home</span>
+        </a>
+          <button class="hamburger">
+            <div class="bar">
+            </div>
+          </button>
+
+
+        <nav class="mobile-nav">
+          <a href="./index.html">Etusivu</a>
+          <a href="./lunch.html">Ruokalista</a>
+          <a href="./order.html">Tilaus</a>
+          <a href="#footer">Yhteystiedot</a>
+          <a href="./order.html">Ostoskori</a>
+        </nav>
       </div>
     </header>
 
-    <!-- NAV BAR ENDS -->
 
     <!-- LOGIN MODAL  -->
       <div id="login-modal">
@@ -151,7 +171,6 @@
         Raikkaan, päivittäin vaihtuvan take away -lounaamme voi noutaa
         mukaan arkisin klo 10.30-13.30.
         Voit <strong>tilata annoksen etukäteen</strong> verkkosivuillamme, jolloin pakkaamme sen sinulle valmiiksi ja vältät jonottamisen.</p>
-      </p>
       </div>
       <button class="arrow-button" onclick="location.href='./order.html'">TILAA LOUNAS ETUKÄTEEN<span class="arrow"></span></button></div></div>
     </main>

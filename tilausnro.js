@@ -15,3 +15,9 @@ const tilausnroElement = document.querySelector('.tilausnro');
 
 const randomId = generateRandomId();
 tilausnroElement.innerHTML = `Tilausnumero: ${randomId}`;
+
+const removeCartFromMemory = () => {
+  localStorage.removeItem("cart");
+};
+
+removeCartFromMemory();

@@ -22,12 +22,12 @@
   font-style: normal;
   font-size: 30px; /* Preferred icon size */
   display: inline-block;
-  line-height: 1;
   text-transform: none;
   letter-spacing: normal;
   word-wrap: normal;
   white-space: nowrap;
   direction: ltr;
+  line-height: 1;
 
   /* Support for all WebKit browsers. */
   -webkit-font-smoothing: antialiased;
@@ -124,7 +124,6 @@ body .dark {
 
 #hero {
   height: 70%;
-  width: auto;
 }
 
 main {
@@ -140,7 +139,7 @@ body {
 
 p {
   font-family: var(--contentFont);
-  font-size: 20px;
+  font-size: 1rem;
   color: var(--indigo-dye);
 }
 
@@ -191,11 +190,15 @@ nav {
   justify-content: center;
   align-items: center;
   transition: transform 0.2s;
-  padding: 1rem;
+  padding: 1.5rem;
   z-index: 98;
   margin: 0;
   position: fixed;
   top: 0;
+}
+
+nav .material-symbols-outlined{
+  display: none;
 }
 
 /* Style the links inside the navigation bar */
@@ -223,9 +226,18 @@ nav a:hover {
 
 /* Add a color to the active/current link */
 nav .logo {
+  margin-right: auto;
+}
+
+nav p {
+  font-family: var(--headerFont);
   font-weight: 600;
   font-size: 2rem;
-  margin-right: auto;
+  color: var(--gunmetal);
+}
+
+nav p:hover {
+  color: var(--caribbean-current);
 }
 
 
@@ -233,89 +245,6 @@ nav .logo {
   cursor: pointer;
 }
 
-.hamburger {
-  height: 40px;
-  position: relative;
-  right: 50px;
-  display: block;
-  width: 35px;
-  cursor: pointer;
-
-  appearance: none;
-  background: none;
-  outline: none;
-  border: none;
-}
-
-.hamburger .bar,
-.hamburger::after,
-.hamburger::before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 5px;
-  background-color: var(--indigo-dye);
-  margin: 6px 0px;
-  transition: 0.4s;
-}
-
-.hamburger.is-active:before {
-  transform: rotate(-45deg) translate(-9px, 6px);
-}
-
-.hamburger.is-active:after {
-  transform: rotate(45deg) translate(-9px, -8px);
-}
-
-.hamburger.is-active .bar {
-  opacity: 0;
-}
-
-.mobile-nav {
-  font: var(--headerFont);
-  display: block;
-  position: fixed;
-  top: 0;
-  left: 100%;
-  min-height: 100vh;
-  width: 100%;
-  background-color: var(--platinum-2);
-  padding-top: 120px;
-  transition: 0.4s;
-  z-index: 98;
-}
-
-.mobile-nav a {
-  font: var(--headerFont);
-  margin: 0 auto 16px;
-  width: 100%;
-  max-width: 200px;
-  display: block;
-  color: var(--gunmetal);
-  padding: 12px 16px;
-  text-align: center;
-  text-decoration: none;
-}
-
-.mobile-nav.is-active {
-  left: 0;
-}
-
-/* MEDIA QUERIES */
-
-@media (max-width: 767px) {
-
-}
-
-@media (min-width: 767px) {
-  .mobile-nav {
-    display: none;
-  }
-
-  .hamburger {
-    display: none;
-  }
-}
 
 /* HERO ELEMENT */
 
@@ -617,7 +546,7 @@ iframe {
 .kiitosContainer .tilausnro{
   font-family: var(--headerFont);
   font-size: 2rem;
-  margin: 0.5rem;
+  margin-top: 1rem;
 }
 
 .kiitosleft {
@@ -627,7 +556,6 @@ iframe {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   border: var(--indigo-dye) 3px solid;
 }
 
@@ -652,4 +580,181 @@ iframe {
   top: 40%;
   left: 70%;
   height: 50%;
+}
+
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 800px) {
+
+  .mobile-nav {
+    display: block;
+    z-index: 99;
+  }
+
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 800;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-top: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  nav {
+    background-color: transparent;
+
+  }
+
+  nav .nav-item {
+    display: none;
+    padding: 0.5rem;
+  }
+
+  .hero-container {
+    flex-direction: column;
+  }
+
+  .hero-container-left {
+    width: 100%;
+    margin-top: 100px;
+  }
+
+  .hero-container h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-container .slogan {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin: 1rem 0 1rem 0;
+  }
+
+  .hero-container-right {
+    width: 100%;
+
+  }
+  .hero-container .kuva1{
+    width: 250px;
+    height: auto;
+    position: absolute;
+    top: 65%;
+    left: 25%;
+  }
+
+  .hero-container .kuva2 {
+    width: 200px;
+    height: auto;
+    position: absolute;
+    top: 90%;
+    left: 10%;
+  }
+
+  .lunch-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .lunch-container-content {
+    padding: 2.5rem;
+  }
+
+  .arrow-button {
+    margin: 1rem;
+  }
+
+  .lunch-container-left img {
+    display: none;
+  }
+
+  .lunch-container-right {
+    width: 100%;
+    margin-top: 20px;
+    height: 80vh;
+  }
+
+  .take-away {
+    width: 100%;
+    margin: 0;
+  }
+
+  .take-away h1{
+    font-size: 2rem;
+    margin: 1rem;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .footer-container-left {
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    align-items: flex-start;
+    margin-left: 4rem;
+  }
+
+  .footer-container-left h1 {
+    font-size: 2rem;
+  }
+
+  .footer-container-right {
+    width: 100%;
+    margin-top: 20px 0 0 0;
+    height: 80vh;
+    width: auto;
+  }
+
+  .kiitosContainer {
+    flex-direction: column;
+    height: 300px;
+  }
+
+  .kiitosleft {
+    width: 90%;
+    padding: 2rem;
+  }
+
+  .kiitosleft .tilausnro {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .kiitosright {
+    width: 100%;
+    margin-top: 20px 0 0 0;
+    width: auto;
+    height: auto;
+  }
+
+  .kiitosright .kuva1 {
+    width: 200px;
+    height: auto;
+    top: 50%;
+    left: 10%;
+  }
+
+  .kiitosright .kuva2 {
+    width: 150px;
+    height: auto;
+    top: 65%;
+    left: 50%;
+  }
+
+
 }
